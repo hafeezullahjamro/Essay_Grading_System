@@ -61,6 +61,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         title: "Login successful",
         description: `Welcome back, ${user.username}!`,
       });
+      // Force navigation to dashboard after login
+      window.location.href = "/dashboard";
     },
     onError: (error: Error) => {
       toast({
@@ -82,6 +84,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         title: "Registration successful",
         description: `Welcome, ${user.username}! You've been given 1 free credit to start.`,
       });
+      // Force navigation to dashboard after registration
+      window.location.href = "/dashboard";
     },
     onError: (error: Error) => {
       toast({

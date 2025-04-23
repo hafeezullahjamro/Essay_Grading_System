@@ -93,15 +93,15 @@ export default function Navbar() {
                     </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="end" className="w-48">
-                    <DropdownMenuItem asChild>
-                      <Link href="/profile" className="w-full">
+                    <DropdownMenuItem>
+                      <span className="w-full cursor-pointer" onClick={() => window.location.href = "/profile"}>
                         Your Profile
-                      </Link>
+                      </span>
                     </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
-                      <Link href="/dashboard" className="w-full">
+                    <DropdownMenuItem>
+                      <span className="w-full cursor-pointer" onClick={() => window.location.href = "/dashboard"}>
                         Dashboard
-                      </Link>
+                      </span>
                     </DropdownMenuItem>
                     <DropdownMenuSeparator />
                     <DropdownMenuItem onClick={handleLogout}>
