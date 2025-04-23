@@ -44,25 +44,28 @@ export default function Navbar() {
         <div className="flex justify-between h-16">
           <div className="flex">
             <div className="flex-shrink-0 flex items-center">
-              <Link href="/">
-                <a className="text-2xl font-bold text-primary">CoreGrader</a>
+              <Link 
+                href="/" 
+                className="text-2xl font-bold text-primary"
+              >
+                CoreGrader
               </Link>
             </div>
             
             {/* Desktop navigation */}
             <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
               {navLinks.map((link) => (
-                <Link key={link.href} href={link.href}>
-                  <a
-                    className={cn(
-                      "inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium",
-                      location === link.href || (link.href === "/" && location === "")
-                        ? "border-primary text-gray-900"
-                        : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700"
-                    )}
-                  >
-                    {link.label}
-                  </a>
+                <Link 
+                  key={link.href} 
+                  href={link.href}
+                  className={cn(
+                    "inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium",
+                    location === link.href || (link.href === "/" && location === "")
+                      ? "border-primary text-gray-900"
+                      : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                  )}
+                >
+                  {link.label}
                 </Link>
               ))}
             </div>
@@ -91,13 +94,13 @@ export default function Navbar() {
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="end" className="w-48">
                     <DropdownMenuItem asChild>
-                      <Link href="/profile">
-                        <a className="w-full">Your Profile</a>
+                      <Link href="/profile" className="w-full">
+                        Your Profile
                       </Link>
                     </DropdownMenuItem>
                     <DropdownMenuItem asChild>
-                      <Link href="/dashboard">
-                        <a className="w-full">Dashboard</a>
+                      <Link href="/dashboard" className="w-full">
+                        Dashboard
                       </Link>
                     </DropdownMenuItem>
                     <DropdownMenuSeparator />
@@ -109,15 +112,17 @@ export default function Navbar() {
               </div>
             ) : (
               <div className="flex items-center">
-                <Link href="/auth">
-                  <a className="text-gray-500 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium">
-                    Log in
-                  </a>
+                <Link 
+                  href="/auth" 
+                  className="text-gray-500 hover:text-gray-700 px-3 py-2 rounded-md text-sm font-medium"
+                >
+                  Log in
                 </Link>
-                <Link href="/auth">
-                  <a className="ml-4 inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
-                    Sign up
-                  </a>
+                <Link 
+                  href="/auth" 
+                  className="ml-4 inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+                >
+                  Sign up
                 </Link>
               </div>
             )}
@@ -141,18 +146,18 @@ export default function Navbar() {
       <div className={`${mobileMenuOpen ? 'block' : 'hidden'} sm:hidden`}>
         <div className="pt-2 pb-3 space-y-1">
           {navLinks.map((link) => (
-            <Link key={link.href} href={link.href}>
-              <a
-                className={cn(
-                  "block pl-3 pr-4 py-2 border-l-4 text-base font-medium",
-                  location === link.href
-                    ? "bg-blue-50 border-primary text-primary"
-                    : "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700"
-                )}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {link.label}
-              </a>
+            <Link 
+              key={link.href} 
+              href={link.href}
+              className={cn(
+                "block pl-3 pr-4 py-2 border-l-4 text-base font-medium",
+                location === link.href
+                  ? "bg-blue-50 border-primary text-primary"
+                  : "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700"
+              )}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {link.label}
             </Link>
           ))}
           
@@ -168,10 +173,12 @@ export default function Navbar() {
           {!user && (
             <div className="pt-4 pb-3 border-t border-gray-200">
               <div className="flex items-center pl-3">
-                <Link href="/auth">
-                  <a className="block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100" onClick={() => setMobileMenuOpen(false)}>
-                    Sign in / Sign up
-                  </a>
+                <Link 
+                  href="/auth" 
+                  className="block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100" 
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Sign in / Sign up
                 </Link>
               </div>
             </div>
@@ -191,10 +198,12 @@ export default function Navbar() {
                 </div>
               </div>
               <div className="mt-3 space-y-1">
-                <Link href="/profile">
-                  <a className="block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100" onClick={() => setMobileMenuOpen(false)}>
-                    Your Profile
-                  </a>
+                <Link 
+                  href="/profile" 
+                  className="block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100" 
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Your Profile
                 </Link>
                 <button 
                   className="w-full text-left block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100"
