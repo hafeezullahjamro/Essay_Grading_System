@@ -10,6 +10,8 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
+import { Logo } from "@/components/ui/logo";
+import { LucideShieldAlert } from "lucide-react";
 
 export default function Navbar() {
   const [location] = useLocation();
@@ -46,9 +48,9 @@ export default function Navbar() {
             <div className="flex-shrink-0 flex items-center">
               <Link 
                 href="/" 
-                className="text-2xl font-bold text-primary"
+                className="flex items-center"
               >
-                CoreGrader
+                <Logo size={32} />
               </Link>
             </div>
             
@@ -103,6 +105,15 @@ export default function Navbar() {
                         Dashboard
                       </span>
                     </DropdownMenuItem>
+                    {user?.username === 'Hassan' && (
+                      <DropdownMenuItem>
+                        <span className="w-full cursor-pointer flex items-center text-amber-600" 
+                          onClick={() => window.location.href = "/admin"}>
+                          <LucideShieldAlert size={16} className="mr-2" />
+                          Admin Panel
+                        </span>
+                      </DropdownMenuItem>
+                    )}
                     <DropdownMenuSeparator />
                     <DropdownMenuItem onClick={handleLogout}>
                       Sign out
@@ -205,6 +216,16 @@ export default function Navbar() {
                 >
                   Your Profile
                 </Link>
+                {user?.username === 'Hassan' && (
+                  <Link 
+                    href="/admin" 
+                    className="block px-4 py-2 text-base font-medium text-amber-600 hover:text-amber-700 hover:bg-gray-100 flex items-center" 
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    <LucideShieldAlert size={16} className="mr-2" />
+                    Admin Panel
+                  </Link>
+                )}
                 <button 
                   className="w-full text-left block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100"
                   onClick={() => {

@@ -7,6 +7,7 @@ import AuthPage from "@/pages/auth-page";
 import DashboardPage from "@/pages/dashboard-page";
 import GradePage from "@/pages/grade-page";
 import ProfilePage from "@/pages/profile-page";
+import AdminPage from "@/pages/admin-page";
 import { ProtectedRoute } from "./lib/protected-route";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
@@ -22,6 +23,7 @@ function Router() {
           <ProtectedRoute path="/dashboard" component={DashboardPage} />
           <ProtectedRoute path="/grade" component={GradePage} />
           <ProtectedRoute path="/profile" component={ProfilePage} />
+          <ProtectedRoute path="/admin" component={AdminPage} />
           <Route component={NotFound} />
         </Switch>
       </main>
