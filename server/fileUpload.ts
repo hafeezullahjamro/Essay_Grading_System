@@ -28,21 +28,19 @@ interface FileExtractionResult {
 async function extractTextFromPDF(filePath: string): Promise<FileExtractionResult> {
   try {
     // Since PDF extraction is complex and requires specific libraries that may have issues in Node.js environments,
-    // for this implementation we'll extract basic text only
-    const readFile = util.promisify(fs.readFile);
-    const buffer = await readFile(filePath);
+    // for this implementation we'll provide a placeholder for PDF content
     
-    // For simplicity, we'll provide a message about PDF extraction
+    // For simplicity, we'll ask the user to manually copy and paste the content from their PDF
     return {
       success: true,
-      text: "PDF content extracted. Note: Some formatting may be lost in the extraction process."
+      text: "PDF detected. Please paste the content of your PDF here for best results, as automatic PDF extraction is limited."
     };
   } catch (error) {
-    console.error('Error extracting text from PDF:', error);
+    console.error('Error handling PDF file:', error);
     return {
       success: false,
       text: '',
-      error: 'Failed to extract text from PDF file.'
+      error: 'Failed to process PDF file.'
     };
   }
 }
