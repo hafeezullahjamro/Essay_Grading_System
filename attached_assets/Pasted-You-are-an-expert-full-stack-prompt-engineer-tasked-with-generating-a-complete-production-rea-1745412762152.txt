@@ -1,0 +1,66 @@
+You are an expert full-stack prompt engineer tasked with generating a **complete**, **production-ready**, **fully functional** React application called **CoreGrader**. Use Replit’s AI project generator to scaffold everything—frontend, dummy backend, seed data, styles, and build scripts—so that I can clone, run locally, and then replace the dummy APIs with my real endpoints later. Be as detailed as possible.
+
+---
+
+## Project Overview
+- **Name:** CoreGrader  
+- **Tech Stack:**  
+  - Frontend: React (with Create React App or Vite), React Router, Context API or Redux  
+  - Styling: Tailwind CSS (or Chakra UI), Framer Motion for subtle animations  
+  - Charts: Recharts or Chart.js  
+  - Backend (dummy): Express.js with in-memory data store or JSON server  
+- **Design:**  
+  - Professional, clean, and uncluttered  
+  - Easy navigation: top nav + sidebar on dashboard  
+  - Consistent color palette (blues, whites, accent color)  
+  - Responsive layout for desktop & mobile  
+
+---
+
+## Core Features & Pages
+1. **Authentication**  
+   - Pages: **Login**, **Signup**  
+   - OAuth placeholders for Google sign-in (buttons only; no real OAuth required)  
+2. **Home / Landing Page**  
+   - Short hero section: “Grade essays instantly with AI”  
+   - Call-to-action buttons: Sign Up, Learn More  
+3. **Dashboard** (after login)  
+   - **Credit Balance** display (prominent badge)  
+   - **Purchase Credits** section with three bundles:  
+     - 1 essay – \$1.50  
+     - 5 essays – \$5.00 (includes bonus credits)  
+     - 10 essays – \$8.50 (includes bonus credits)  
+     - Unlimited monthly – \$15.00  
+   - **Purchase History** table  
+4. **Essay Grading**  
+   - Text area to paste essay  
+   - Dropdown to select a rubric  
+   - **“Grade Now”** button  
+   - On submit: call dummy endpoint `POST /api/grade` and display results  
+   - Results UI:  
+     - **Section 1:** Numeric scores in a bar chart  
+     - **Section 2:** Feedback text (AI comments)  
+     - **Section 3:** Recommendations in a card grid  
+5. **Account/Profile**  
+   - Show user email, current credits, subscription expiry  
+   - Button to renew subscription  
+
+---
+
+## Dummy API Specification
+- **Base URL:** `/api`
+- **Endpoints:**  
+  - `POST /api/auth/login` → returns `{ token, user }`  
+  - `POST /api/auth/signup` → returns `{ token, user }`  
+  - `GET  /api/users` → returns seeded users array  
+  - `GET  /api/credits` → returns `{ credits, subscriptionExpiresAt }`  
+  - `POST /api/purchase` → accepts `{ bundleId }`, returns updated `{ credits }`  
+  - `POST /api/grade` → accepts `{ essayText, rubricId }`, returns `{ scores: { … }, feedback: “…”, recommendations: [ “…”, … ] }`  
+- **Seed Data:**  
+  ```json
+  [
+    { "id": 1, "email": "free_user@example.com",    "credits": 1,  "subscriptionExpiresAt": null },
+    { "id": 2, "email": "pack5_user@example.com",   "credits": 6,  "subscriptionExpiresAt": null },
+    { "id": 3, "email": "pack10_user@example.com",  "credits": 12, "subscriptionExpiresAt": null },
+    { "id": 4, "email": "subscriber@example.com",   "credits": 0,  "subscriptionExpiresAt": "2099-12-31T23:59:59Z" }
+  ]
