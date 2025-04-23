@@ -1,6 +1,7 @@
-import { pgTable, text, serial, integer, timestamp } from "drizzle-orm/pg-core";
+import { pgTable, text, serial, integer, timestamp, foreignKey } from "drizzle-orm/pg-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
+import { relations } from "drizzle-orm";
 
 // User table schema
 export const users = pgTable("users", {
@@ -12,20 +13,34 @@ export const users = pgTable("users", {
   subscriptionExpiresAt: timestamp("subscription_expires_at"),
 });
 
+// User relations
+export const usersRelations = relations(users, ({ many }) => ({
+  purchases: many(purchases),
+  gradings: many(gradings),
+}));
+
 // Purchases table schema
 export const purchases = pgTable("purchases", {
   id: serial("id").primaryKey(),
-  userId: integer("user_id").notNull(),
+  userId: integer("user_id").notNull().references(() => users.id, { onDelete: 'cascade' }),
   bundleId: integer("bundle_id").notNull(),
   amount: integer("amount").notNull(),
   date: timestamp("date").notNull().defaultNow(),
   status: text("status").notNull().default("completed"),
 });
 
+// Purchase relations
+export const purchasesRelations = relations(purchases, ({ one }) => ({
+  user: one(users, {
+    fields: [purchases.userId],
+    references: [users.id],
+  }),
+}));
+
 // Essay grading history table schema
 export const gradings = pgTable("gradings", {
   id: serial("id").primaryKey(),
-  userId: integer("user_id").notNull(),
+  userId: integer("user_id").notNull().references(() => users.id, { onDelete: 'cascade' }),
   essayText: text("essay_text").notNull(),
   rubricId: integer("rubric_id").notNull(),
   scores: text("scores").notNull(), // JSON stringified
@@ -33,6 +48,14 @@ export const gradings = pgTable("gradings", {
   recommendations: text("recommendations").notNull(), // JSON stringified
   date: timestamp("date").notNull().defaultNow(),
 });
+
+// Grading relations
+export const gradingsRelations = relations(gradings, ({ one }) => ({
+  user: one(users, {
+    fields: [gradings.userId],
+    references: [users.id],
+  }),
+}));
 
 // Create Zod schemas for validation
 export const insertUserSchema = createInsertSchema(users).omit({
