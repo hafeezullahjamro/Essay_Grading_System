@@ -4,6 +4,7 @@ import { storage } from "./storage";
 import { setupAuth } from "./auth";
 import { z } from "zod";
 import { gradeEssaySchema } from "@shared/schema";
+import { fileUploadMiddleware, handleFileUpload } from "./fileUpload";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Set up authentication routes
@@ -103,6 +104,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
     const purchases = await storage.getUserPurchases(req.user.id);
     res.json(purchases);
   });
+  
+  // File upload endpoint for essays
+  app.post("/api/upload-essay", fileUploadMiddleware, handleFileUpload);
 
   const httpServer = createServer(app);
   return httpServer;
