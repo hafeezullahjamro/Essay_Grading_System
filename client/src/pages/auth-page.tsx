@@ -12,6 +12,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Separator } from "@/components/ui/separator";
+import { GoogleSignIn } from "@/components/auth/google-sign-in";
 
 // Extend the insert schema for login
 const loginSchema = z.object({
@@ -192,10 +193,7 @@ export default function AuthPage() {
                 </div>
 
                 <div className="mt-6">
-                  <Button variant="outline" className="w-full" disabled>
-                    <i className="fab fa-google mr-2 text-red-500"></i>
-                    Google
-                  </Button>
+                  <GoogleSignIn />
                 </div>
               </div>
             </CardContent>
