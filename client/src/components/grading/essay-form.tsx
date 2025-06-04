@@ -219,11 +219,13 @@ export default function EssayForm({ form, onSubmit, isSubmitting }: EssayFormPro
               <Button 
                 type="submit" 
                 disabled={isSubmitting || uploadStatus === 'uploading' || form.getValues('essayText').length < 50}
+                className="bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-8 rounded-lg shadow-md transition-all duration-200 hover:shadow-lg disabled:opacity-50"
+                size="lg"
               >
                 {isSubmitting ? (
                   <>
                     <i className="fas fa-spinner fa-spin mr-2"></i>
-                    Grading...
+                    Grading Essay...
                   </>
                 ) : (
                   <>

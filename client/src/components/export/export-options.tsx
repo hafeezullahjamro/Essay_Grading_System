@@ -170,6 +170,7 @@ export default function ExportOptions({ gradingId, gradingCount = 0 }: ExportOpt
                 disabled={isLoading || exportMutation.isPending}
                 variant={option.recommended ? "default" : "outline"}
                 size="sm"
+                className={option.recommended ? "bg-primary hover:bg-primary/90 text-white font-medium shadow-md transition-all duration-200 hover:shadow-lg" : "border-primary text-primary hover:bg-primary/10"}
               >
                 {isLoading ? (
                   <>
