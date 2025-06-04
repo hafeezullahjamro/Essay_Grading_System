@@ -29,8 +29,8 @@ export default function HomePage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <span className="block xl:inline">Grade essays instantly</span>{" "}
-                  <span className="block text-primary xl:inline">with AI</span>
+                  <span className="block xl:inline">Grade EE & TOK/Exhibition essays instantly</span>{" "}
+                  <span className="block text-primary xl:inline">with CorestoneGrader</span>
                 </motion.h1>
                 <motion.p 
                   className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0"
@@ -38,8 +38,8 @@ export default function HomePage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
                 >
-                  Save hours of grading time with our advanced AI-powered essay grading platform. 
-                  Get detailed feedback, scores, and improvement suggestions in seconds.
+                  Save hours with our advanced AI-powered essay grading platform specially designed for IB. 
+                  Get detailed feedback, scores, and improvement suggestions in seconds without affecting your academic integrity.
                 </motion.p>
                 <motion.div 
                   className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start"
@@ -49,7 +49,7 @@ export default function HomePage() {
                 >
                   <div className="rounded-md shadow">
                     <Link href={user ? "/dashboard" : "/auth"}>
-                      <a className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary/90 md:py-4 md:text-lg md:px-10">
+                      <a className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-emerald-500 hover:bg-emerald-600 md:py-4 md:text-lg md:px-10">
                         Get started
                       </a>
                     </Link>
@@ -82,10 +82,10 @@ export default function HomePage() {
           <div className="lg:text-center">
             <h2 className="text-base text-primary font-semibold tracking-wide uppercase">Features</h2>
             <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-              Smart Essay Grading
+              Smart IBDP Core Grading & Feedback
             </p>
             <p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-              Our AI-powered platform streamlines the grading process with accurate, consistent, and detailed feedback.
+              Our AI-powered platform streamlines the grading process with accurate, consistent, and detailed feedback without affecting your academic integrity.
             </p>
           </div>
 
@@ -102,7 +102,7 @@ export default function HomePage() {
                   <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white">
                     <i className="fas fa-bolt"></i>
                   </div>
-                  <p className="ml-16 text-lg leading-6 font-medium text-gray-900">Instant Grading</p>
+                  <p className="ml-16 text-lg leading-6 font-medium text-gray-900">Instant EE/TOK Grading</p>
                 </dt>
                 <dd className="mt-2 ml-16 text-base text-gray-500">
                   Get detailed essay feedback in seconds, not days. Save hours of manual grading time.
@@ -141,7 +141,7 @@ export default function HomePage() {
                   <p className="ml-16 text-lg leading-6 font-medium text-gray-900">Detailed Feedback</p>
                 </dt>
                 <dd className="mt-2 ml-16 text-base text-gray-500">
-                  Provide students with actionable suggestions for improvement and personalized comments.
+                  Provide students with actionable suggestions for improvement and personalized comments according to IB rubrics.
                 </dd>
               </motion.div>
 
