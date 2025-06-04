@@ -189,10 +189,10 @@ export default function HomePage() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <h3 className="text-xl font-semibold text-gray-900">Single Essay</h3>
+              <h3 className="text-xl font-semibold text-gray-900">Single EE/TOK Essay</h3>
               <p className="mt-4 text-gray-500">Perfect for trying out the service</p>
-              <p className="mt-8 text-4xl font-extrabold text-gray-900">$1.50</p>
-              <p className="mt-2 text-sm text-gray-500">per essay</p>
+              <p className="mt-8 text-4xl font-extrabold text-gray-900">Free</p>
+              <p className="mt-2 text-sm text-gray-500">for new users</p>
               <ul className="mt-6 space-y-4 flex-1">
                 <li className="flex items-start">
                   <div className="flex-shrink-0">
