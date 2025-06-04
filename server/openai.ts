@@ -15,36 +15,40 @@ export interface EssayGradingResponse {
   recommendations: string[];
 }
 
-// Define rubrics for essay grading
+// Define rubrics for essay grading based on IB assessment criteria
 export const rubrics = {
   1: {
-    name: "General Essay Rubric",
+    name: "Extended Essay",
+    maxScore: 34,
     criteria: {
-      "Grammar and Mechanics": "Evaluate grammar, spelling, punctuation, and sentence structure",
-      "Organization and Structure": "Assess logical flow, paragraph structure, and overall organization",
-      "Content and Ideas": "Judge the quality, originality, and depth of ideas presented",
-      "Voice and Style": "Evaluate writing style, tone, and author's voice",
-      "Use of Evidence": "Assess how well evidence supports arguments and claims"
+      "Framework for the Essay (Research Question, Methods, Structure)": "Evaluate the effectiveness of research question, research methods, and structural conventions (0-6 marks)",
+      "Knowledge and Understanding": "Assess demonstration of knowledge and understanding of subject matter, terminology, and concepts (0-6 marks)", 
+      "Analysis and Line of Argument": "Judge analytical approach and coherent line of argument linking research question to findings and conclusions (0-6 marks)",
+      "Discussion and Evaluation": "Evaluate balanced discussion of findings and assessment of essay's strengths and limitations (0-8 marks)",
+      "Reflection": "Assess evaluative reflection on learning experience and evidence of growth and transfer of learning (0-4 marks)",
+      "Language and Presentation": "Evaluate clarity of expression, academic writing style, and proper citation format (0-4 marks)"
     }
   },
   2: {
-    name: "Academic Research Paper",
+    name: "TOK Essay", 
+    maxScore: 10,
     criteria: {
-      "Thesis and Argument": "Evaluate clarity and strength of thesis statement and argument",
-      "Research and Citations": "Assess quality of sources and proper citation format",
-      "Analysis and Critical Thinking": "Judge depth of analysis and critical evaluation",
-      "Academic Writing Style": "Evaluate formal writing style and academic tone",
-      "Conclusion and Synthesis": "Assess how well the conclusion synthesizes the argument"
+      "Sustained Focus on Title": "Evaluate how well the essay maintains focus on the prescribed title throughout",
+      "Effective Links to Areas of Knowledge": "Assess clear connections to TOK areas of knowledge (history, natural sciences, human sciences, mathematics, arts)",
+      "Arguments Supported by Specific Examples": "Judge use of precise, relevant examples that support analytical discussion rather than description",
+      "Awareness and Evaluation of Different Points of View": "Evaluate critical exploration of contrasting perspectives and counterclaims",
+      "Clear, Coherent and Critical Exploration": "Assess overall analytical depth, logical flow, and critical thinking demonstrated"
     }
   },
   3: {
-    name: "Creative Writing",
+    name: "TOK Exhibition",
+    maxScore: 10, 
     criteria: {
-      "Creativity and Originality": "Evaluate uniqueness and creative elements",
-      "Character Development": "Assess depth and believability of characters",
-      "Plot and Structure": "Judge story structure and narrative flow",
-      "Setting and Atmosphere": "Evaluate world-building and mood creation",
-      "Language and Style": "Assess use of literary devices and writing style"
+      "Clear Identification of Objects and Real-World Contexts": "Evaluate specificity and authenticity of three objects with clear real-world contexts",
+      "Effective Links Between Objects and IA Prompt": "Assess how well objects connect to the chosen internal assessment prompt",
+      "Strong Justification Supported by Evidence": "Judge quality of reasoning and evidence supporting object selections",
+      "Demonstration of TOK Thinking": "Evaluate how the exhibition shows understanding of knowledge questions",
+      "Exploration of How TOK Manifests in the World": "Assess how effectively the exhibition demonstrates TOK concepts in real-world contexts"
     }
   }
 };
@@ -56,40 +60,77 @@ export async function gradeEssayWithAI(request: EssayGradingRequest): Promise<Es
       throw new Error("Invalid rubric ID");
     }
 
-    const prompt = `You are an expert essay grader. Please grade the following essay using the "${rubric.name}" rubric.
+    let specificInstructions = "";
+    let maxScoreInfo = `Total possible score: ${rubric.maxScore} marks`;
 
-RUBRIC CRITERIA:
+    // Add specific IB assessment instructions based on essay type
+    if (request.rubricId === 1) {
+      // Extended Essay
+      specificInstructions = `
+This is an IB Extended Essay assessment. Apply official IB criteria:
+- Use best-fit approach with markbands (1-2: Basic, 3-4: Developing, 5-6: Proficient)
+- Framework (0-6): Assess research question clarity, methods, structure
+- Knowledge (0-6): Evaluate subject understanding, terminology, concepts
+- Analysis (0-6): Judge analytical depth and coherent argumentation
+- Discussion (0-8): Assess balanced discussion and critical evaluation
+- Reflection (0-4): Evidence of learning growth and skill transfer
+- Use positive marking - give credit for what is demonstrated`;
+    } else if (request.rubricId === 2) {
+      // TOK Essay
+      specificInstructions = `
+This is an IB TOK Essay assessment. Apply global impression marking:
+- Central question: "Does the student provide clear, coherent and critical exploration of the title?"
+- Use 5-level scale (1-2: Rudimentary, 3-4: Basic, 5-6: Satisfactory, 7-8: Good, 9-10: Excellent)
+- Sustained focus on title is crucial
+- Must link effectively to areas of knowledge
+- Arguments supported by specific examples
+- Demonstrate awareness of different viewpoints`;
+    } else if (request.rubricId === 3) {
+      // TOK Exhibition
+      specificInstructions = `
+This is an IB TOK Exhibition assessment. Apply holistic judgment:
+- Central question: "Does the exhibition show how TOK manifests in the world?"
+- Use 5-level scale (1-2: Rudimentary, 3-4: Basic, 5-6: Satisfactory, 7-8: Good, 9-10: Excellent)
+- Objects must have specific real-world contexts
+- All three objects link to same IA prompt
+- Strong justification supported by evidence
+- Demonstrates TOK thinking in real-world contexts`;
+    }
+
+    const prompt = `You are a senior IB examiner specializing in ${rubric.name} assessment. Apply official IB criteria rigorously.
+
+${specificInstructions}
+
+ASSESSMENT CRITERIA:
 ${Object.entries(rubric.criteria).map(([criterion, description]) => 
   `- ${criterion}: ${description}`
 ).join('\n')}
 
-ESSAY TO GRADE:
+SUBMISSION TO ASSESS:
 """
 ${request.essayText}
 """
 
-Please provide your evaluation in the following JSON format:
+${maxScoreInfo}
+
+Provide assessment in this JSON format:
 {
   "scores": {
-    ${Object.keys(rubric.criteria).map(criterion => `"${criterion}": [score from 1-10]`).join(',\n    ')}
+    ${Object.keys(rubric.criteria).map(criterion => `"${criterion}": [marks according to IB scale]`).join(',\n    ')}
   },
-  "overallScore": [overall score from 1-10],
-  "feedback": "Detailed feedback explaining the strengths and areas for improvement",
-  "recommendations": ["specific recommendation 1", "specific recommendation 2", "specific recommendation 3"]
+  "overallScore": [total marks awarded],
+  "feedback": "Comprehensive feedback following IB examiner standards explaining strengths and areas for development",
+  "recommendations": ["specific actionable recommendation 1", "specific actionable recommendation 2", "specific actionable recommendation 3"]
 }
 
-Be constructive and specific in your feedback. Scores should be integers from 1-10 where:
-1-3: Needs significant improvement
-4-6: Developing/Average
-7-8: Good/Proficient  
-9-10: Excellent/Exceptional`;
+Apply IB marking standards consistently. Be constructive but maintain high academic standards.`;
 
     const response = await openai.chat.completions.create({
       model: "gpt-4o",
       messages: [
         {
           role: "system",
-          content: "You are an expert essay grader with years of experience in educational assessment. Provide detailed, constructive feedback to help students improve their writing."
+          content: "You are a senior IB examiner with extensive experience in International Baccalaureate assessment. Apply official IB criteria consistently, use positive marking principles, and provide professional feedback that helps students understand their performance level and areas for improvement."
         },
         {
           role: "user",

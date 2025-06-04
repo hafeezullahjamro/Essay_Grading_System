@@ -26,13 +26,23 @@ export default function EssayForm({ form, onSubmit, isSubmitting }: EssayFormPro
   const [fileUploadError, setFileUploadError] = useState<string | null>(null);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   
-  // Rubric options
-  const rubrics = [
-    { id: "1", name: "General Academic Essay" },
-    { id: "2", name: "Argumentative Essay" },
-    { id: "3", name: "College Admissions Essay" },
-    { id: "4", name: "Research Paper" },
-    { id: "5", name: "Literary Analysis" }
+  // IB Essay types based on rubrics
+  const essayTypes = [
+    { 
+      id: "1", 
+      name: "Extended Essay",
+      description: "IB Extended Essay - Independent research project with detailed analysis (4,000 words max)"
+    },
+    { 
+      id: "2", 
+      name: "TOK Essay", 
+      description: "Theory of Knowledge Essay - Critical exploration of knowledge questions (1,600 words max)"
+    },
+    { 
+      id: "3", 
+      name: "TOK Exhibition",
+      description: "Theory of Knowledge Exhibition - Three objects exploring how TOK manifests in the world"
+    }
   ];
 
   // Handle file upload
@@ -96,17 +106,20 @@ export default function EssayForm({ form, onSubmit, isSubmitting }: EssayFormPro
               name="rubricId"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Select Rubric</FormLabel>
+                  <FormLabel>Select Essay Type</FormLabel>
                   <Select onValueChange={field.onChange} defaultValue={field.value}>
                     <FormControl>
                       <SelectTrigger>
-                        <SelectValue placeholder="Select a rubric" />
+                        <SelectValue placeholder="Select an essay type" />
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
-                      {rubrics.map((rubric) => (
-                        <SelectItem key={rubric.id} value={rubric.id}>
-                          {rubric.name}
+                      {essayTypes.map((essayType) => (
+                        <SelectItem key={essayType.id} value={essayType.id}>
+                          <div className="flex flex-col">
+                            <span className="font-medium">{essayType.name}</span>
+                            <span className="text-sm text-gray-500">{essayType.description}</span>
+                          </div>
                         </SelectItem>
                       ))}
                     </SelectContent>

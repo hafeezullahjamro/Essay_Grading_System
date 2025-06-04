@@ -22,6 +22,15 @@ export default function GradePage() {
   const { user } = useAuth();
   const [gradingResults, setGradingResults] = useState<GradingResult | null>(null);
   
+  // Fetch available rubrics
+  const { data: rubrics, isLoading: rubricsLoading } = useQuery({
+    queryKey: ["/api/rubrics"],
+    queryFn: async () => {
+      const res = await fetch("/api/rubrics");
+      return res.json();
+    },
+  });
+  
   // Initialize form
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
