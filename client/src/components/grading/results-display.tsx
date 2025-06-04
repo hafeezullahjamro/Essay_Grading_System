@@ -174,6 +174,16 @@ export default function ResultsDisplay({ results, gradingId }: ResultsDisplayPro
           </div>
         </motion.div>
       </Card>
+
+      {/* Export Options Section */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.8 }}
+        className="mt-6"
+      >
+        <ExportOptions gradingId={gradingId} gradingCount={1} />
+      </motion.div>
     </motion.div>
   );
 }

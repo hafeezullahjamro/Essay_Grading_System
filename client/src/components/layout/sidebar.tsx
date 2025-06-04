@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import { useAuth } from "@/hooks/use-auth";
 
 type SidebarProps = {
-  activePage: "dashboard" | "grade" | "history" | "profile";
+  activePage: "dashboard" | "grade" | "export" | "history" | "profile";
 };
 
 export default function Sidebar({ activePage }: SidebarProps) {
@@ -12,6 +12,7 @@ export default function Sidebar({ activePage }: SidebarProps) {
   const menuItems = [
     { id: "dashboard", label: "Dashboard", icon: "fas fa-home", path: "/dashboard" },
     { id: "grade", label: "Grade Essay", icon: "fas fa-edit", path: "/grade" },
+    { id: "export", label: "Export Results", icon: "fas fa-download", path: "/export" },
     { id: "profile", label: "Profile", icon: "fas fa-user", path: "/profile" },
   ];
 

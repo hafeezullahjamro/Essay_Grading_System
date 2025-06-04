@@ -126,6 +126,19 @@ export async function registerRoutes(app: Express): Promise<Server> {
     res.json(rubrics);
   });
 
+  // Get user's grading history
+  app.get("/api/gradings", async (req, res) => {
+    if (!req.isAuthenticated()) return res.sendStatus(401);
+    
+    try {
+      const gradings = await storage.getUserGradings(req.user.id);
+      res.json(gradings);
+    } catch (error) {
+      console.error("Error fetching user gradings:", error);
+      res.status(500).json({ message: "Failed to fetch grading history" });
+    }
+  });
+
   // Export grading results
   app.get("/api/export/:format", async (req, res) => {
     if (!req.isAuthenticated()) return res.sendStatus(401);
