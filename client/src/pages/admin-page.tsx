@@ -109,7 +109,7 @@ export default function AdminPage() {
         <div>
           <h1 className="text-3xl font-bold tracking-tight">Admin Dashboard</h1>
           <p className="text-muted-foreground">
-            Analytics and management for CoreGrader system
+            Analytics and management for CorestoneGrader system
           </p>
         </div>
         <Badge variant="outline" className="px-3 py-1">

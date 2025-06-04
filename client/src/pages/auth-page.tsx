@@ -84,7 +84,7 @@ export default function AuthPage() {
           transition={{ duration: 0.5 }}
         >
           <div className="mb-8 text-center">
-            <h1 className="text-3xl font-extrabold">CoreGrader</h1>
+            <h1 className="text-3xl font-extrabold">CorestoneGrader</h1>
             <p className="mt-2 text-gray-600">AI-powered essay grading platform</p>
           </div>
 

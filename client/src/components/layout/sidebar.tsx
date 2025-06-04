@@ -22,7 +22,7 @@ export default function Sidebar({ activePage }: SidebarProps) {
           <div className="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
             <div className="flex items-center flex-shrink-0 px-4">
               <Link href="/">
-                <a className="text-2xl font-bold text-primary">CoreGrader</a>
+                <a className="text-2xl font-bold text-primary">CorestoneGrader</a>
               </Link>
             </div>
             <nav className="mt-5 flex-1 px-2 bg-white space-y-1">
