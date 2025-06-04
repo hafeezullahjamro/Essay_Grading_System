@@ -11,7 +11,7 @@ interface LogoProps {
 export function Logo({ 
   className, 
   size = 24, 
-  showText = true,
+  showText = false,
   textClassName
 }: LogoProps) {
   return (
