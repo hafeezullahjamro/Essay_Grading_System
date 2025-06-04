@@ -5,6 +5,7 @@ import { setupAuth } from "./auth";
 import { z } from "zod";
 import { gradeEssaySchema } from "@shared/schema";
 import { fileUploadMiddleware, handleFileUpload } from "./fileUpload";
+import { gradeEssayWithAI, getRubrics } from "./openai";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Set up authentication routes
@@ -81,8 +82,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
       await storage.addUserCredits(user.id, -1);
     }
     
-    // Generate grading result (in a real app, this would call an AI model)
-    const result = await storage.gradeEssay(essayText, rubricId);
+    // Generate grading result using OpenAI
+    const result = await gradeEssayWithAI({ essayText, rubricId });
     
     // Save grading to history
     await storage.createGrading({
@@ -107,6 +108,51 @@ export async function registerRoutes(app: Express): Promise<Server> {
   
   // File upload endpoint for essays
   app.post("/api/upload-essay", fileUploadMiddleware, handleFileUpload);
+  
+  // Get available rubrics
+  app.get("/api/rubrics", (req, res) => {
+    const rubrics = getRubrics();
+    res.json(rubrics);
+  });
+  
+  // Google authentication endpoint
+  app.post("/api/auth/google", async (req, res) => {
+    try {
+      const { displayName, email, uid, photoURL } = req.body;
+      
+      if (!email || !uid) {
+        return res.status(400).json({ message: "Missing required Google user data" });
+      }
+      
+      // Check if user already exists by email
+      let user = await storage.getUserByEmail(email);
+      
+      if (!user) {
+        // Create new user from Google account
+        user = await storage.createUser({
+          username: displayName || email.split('@')[0],
+          email: email,
+          password: 'google-auth-' + uid // Placeholder password for Google users
+        });
+        
+        // Add welcome credits for new Google users
+        user = await storage.addUserCredits(user.id, 99); // Add 99 to the default 1 = 100 total
+      }
+      
+      // Log the user in
+      req.login(user, (err) => {
+        if (err) {
+          console.error("Login error:", err);
+          return res.status(500).json({ message: "Login failed" });
+        }
+        res.json(user);
+      });
+      
+    } catch (error) {
+      console.error("Google auth error:", error);
+      res.status(500).json({ message: "Authentication failed" });
+    }
+  });
 
   const httpServer = createServer(app);
   return httpServer;
