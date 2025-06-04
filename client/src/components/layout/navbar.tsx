@@ -79,7 +79,7 @@ export default function Navbar() {
               <>
                 {/* Credit badge - hidden on mobile */}
                 <div className="hidden lg:flex items-center">
-                  <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs sm:text-sm font-medium bg-blue-100 text-blue-800">
+                  <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs sm:text-sm font-medium bg-primary/10 text-primary">
                     <i className="fas fa-coins mr-1 text-amber-500"></i>
                     <span className="hidden sm:inline">{user.credits}</span>
                     <span className="sm:hidden">{user.credits}</span>
@@ -133,7 +133,7 @@ export default function Navbar() {
                 </Link>
                 <Link 
                   href="/auth" 
-                  className="inline-flex items-center px-3 sm:px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors"
+                  className="inline-flex items-center px-3 sm:px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors"
                 >
                   Sign up
                 </Link>
@@ -185,7 +185,7 @@ export default function Navbar() {
               </Link>
               <Link 
                 href="/auth" 
-                className="block w-full text-center px-4 py-3 rounded-md text-base font-medium text-white bg-primary hover:bg-blue-700 transition-colors" 
+                className="block w-full text-center px-4 py-3 rounded-md text-base font-medium text-white bg-primary hover:bg-primary/90 transition-colors" 
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Sign up
@@ -196,8 +196,8 @@ export default function Navbar() {
           {user && (
             <>
               {/* Credits display for mobile */}
-              <div className="px-3 py-2 bg-blue-50 rounded-md">
-                <span className="inline-flex items-center text-sm font-medium text-blue-800">
+              <div className="px-3 py-2 bg-primary/10 rounded-md">
+                <span className="inline-flex items-center text-sm font-medium text-primary">
                   <i className="fas fa-coins mr-2 text-amber-500"></i>
                   {user.credits} Credits
                 </span>
