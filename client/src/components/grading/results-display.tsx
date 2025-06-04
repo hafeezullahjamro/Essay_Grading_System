@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { GradingResult } from "@shared/schema";
 import { 
   BarChart, 
@@ -8,8 +9,14 @@ import {
   YAxis, 
   CartesianGrid, 
   Tooltip, 
-  ResponsiveContainer 
+  ResponsiveContainer,
+  RadialBarChart,
+  RadialBar,
+  PieChart,
+  Pie,
+  Cell
 } from "recharts";
+import { TrendingUp, Award, Target, CheckCircle, AlertCircle, BookOpen } from "lucide-react";
 
 type ResultsDisplayProps = {
   results: GradingResult;
@@ -18,10 +25,35 @@ type ResultsDisplayProps = {
 export default function ResultsDisplay({ results }: ResultsDisplayProps) {
   // Format scores data for chart
   const scoreData = Object.entries(results.scores).map(([category, score]) => ({
-    category,
+    category: category.length > 25 ? category.substring(0, 25) + "..." : category,
+    fullCategory: category,
     score,
     maxScore: 10,
+    percentage: (score / 10) * 100
   }));
+
+  // Calculate performance level
+  const getPerformanceLevel = (score: number) => {
+    if (score >= 9) return { level: "Excellent", color: "bg-green-500", textColor: "text-green-700" };
+    if (score >= 7) return { level: "Good", color: "bg-blue-500", textColor: "text-blue-700" };
+    if (score >= 5) return { level: "Satisfactory", color: "bg-yellow-500", textColor: "text-yellow-700" };
+    if (score >= 3) return { level: "Basic", color: "bg-orange-500", textColor: "text-orange-700" };
+    return { level: "Needs Improvement", color: "bg-red-500", textColor: "text-red-700" };
+  };
+
+  const performance = getPerformanceLevel(results.overallScore);
+  
+  // Colors for charts
+  const chartColors = ['#3B82F6', '#10B981', '#F59E0B', '#EF4444', '#8B5CF6', '#06B6D4'];
+  
+  // Radial chart data for overall score
+  const radialData = [
+    {
+      name: 'Score',
+      value: results.overallScore,
+      fill: performance.color.replace('bg-', '#')
+    }
+  ];
   
   // Animation variants
   const containerVariants = {
