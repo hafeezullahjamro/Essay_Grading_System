@@ -442,6 +442,18 @@ export class MemStorage implements IStorage {
     this.gradings.set(id, newGrading);
     return newGrading;
   }
+
+  async getGradingById(id: number): Promise<any | undefined> {
+    return this.gradings.get(id);
+  }
+
+  async getUserGradings(userId: number): Promise<any[]> {
+    const userGradings = Array.from(this.gradings.values())
+      .filter(grading => grading.userId === userId)
+      .sort((a, b) => b.date.getTime() - a.date.getTime());
+    
+    return userGradings;
+  }
 }
 
 // Switch from MemStorage to DatabaseStorage

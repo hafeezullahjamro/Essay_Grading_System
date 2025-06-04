@@ -16,13 +16,16 @@ import {
   Pie,
   Cell
 } from "recharts";
-import { TrendingUp, Award, Target, CheckCircle, AlertCircle, BookOpen } from "lucide-react";
+import { TrendingUp, Award, Target, CheckCircle, AlertCircle, BookOpen, Download } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import ExportOptions from "@/components/export/export-options";
 
 type ResultsDisplayProps = {
   results: GradingResult;
+  gradingId?: number;
 };
 
-export default function ResultsDisplay({ results }: ResultsDisplayProps) {
+export default function ResultsDisplay({ results, gradingId }: ResultsDisplayProps) {
   // Format scores data for chart
   const scoreData = Object.entries(results.scores).map(([category, score]) => ({
     category: category.length > 25 ? category.substring(0, 25) + "..." : category,
