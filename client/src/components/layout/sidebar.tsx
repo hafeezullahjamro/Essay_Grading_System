@@ -33,7 +33,7 @@ export default function Sidebar({ activePage }: SidebarProps) {
                     className={cn(
                       "group flex items-center px-2 py-2 text-sm font-medium rounded-md",
                       activePage === item.id
-                        ? "bg-blue-50 text-blue-900"
+                        ? "bg-primary/10 text-primary"
                         : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
                     )}
                   >
@@ -41,7 +41,7 @@ export default function Sidebar({ activePage }: SidebarProps) {
                       className={cn(
                         `${item.icon} mr-3`,
                         activePage === item.id
-                          ? "text-blue-500"
+                          ? "text-primary"
                           : "text-gray-400 group-hover:text-gray-500"
                       )}
                     ></i>

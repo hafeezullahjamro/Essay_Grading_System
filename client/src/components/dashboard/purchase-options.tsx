@@ -108,7 +108,7 @@ export default function PurchaseOptions() {
             <div className={bundle.isPopular ? "flex justify-between items-center" : ""}>
               <h3 className="text-lg font-medium text-gray-900">{bundle.name}</h3>
               {bundle.isPopular && (
-                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary/10 text-primary">
                   Popular
                 </span>
               )}
@@ -137,7 +137,7 @@ export default function PurchaseOptions() {
               type="button"
               className={`inline-flex items-center px-4 py-2 border shadow-sm text-sm font-medium rounded-md ${
                 bundle.isPopular
-                  ? "border-transparent text-white bg-primary hover:bg-blue-700"
+                  ? "border-transparent text-white bg-primary hover:bg-primary/90"
                   : "border-gray-300 text-gray-700 bg-white hover:bg-gray-50"
               } focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary`}
               onClick={() => handlePurchase(bundle.id)}
