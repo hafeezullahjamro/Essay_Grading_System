@@ -228,7 +228,7 @@ export default function HomePage() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              <div className="absolute top-0 right-0 -mt-3 mr-4 rounded-full bg-blue-100 text-blue-800 px-3 py-1 text-xs font-medium">
+              <div className="absolute top-0 right-0 -mt-3 mr-4 rounded-full bg-primary/10 text-primary px-3 py-1 text-xs font-medium">
                 Popular
               </div>
               <h3 className="text-xl font-semibold text-gray-900">5 Essay Pack</h3>
@@ -256,7 +256,7 @@ export default function HomePage() {
                 </li>
               </ul>
               <Link href={user ? "/dashboard" : "/auth"}>
-                <a className="mt-8 block w-full bg-primary border border-transparent rounded-md py-2 text-sm font-medium text-white text-center hover:bg-blue-700">
+                <a className="mt-8 block w-full bg-primary border border-transparent rounded-md py-2 text-sm font-medium text-white text-center hover:bg-primary/90">
                   Get Started
                 </a>
               </Link>
