@@ -84,7 +84,7 @@ async function checkEndpoint(port, path, description) {
 
 async function main() {
   log('🚀 CorestoneGrader Deployment Verification', 'blue');
-  log('=' * 50, 'blue');
+  log('='.repeat(50), 'blue');
 
   let allChecks = true;
 
@@ -191,7 +191,7 @@ async function main() {
 
   // Final report
   log('\n📊 Deployment Verification Summary:', 'blue');
-  log('=' * 50, 'blue');
+  log('='.repeat(50), 'blue');
 
   if (allChecks) {
     log('🎉 All critical checks passed! Application is ready for deployment.', 'green');

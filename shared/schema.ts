@@ -11,6 +11,8 @@ export const users = pgTable("users", {
   email: text("email").notNull().unique(),
   credits: integer("credits").notNull().default(1),
   subscriptionExpiresAt: timestamp("subscription_expires_at"),
+  isAdmin: integer("is_admin").notNull().default(0), // 0 = false, 1 = true
+  createdAt: timestamp("created_at").notNull().defaultNow(),
 });
 
 // User relations
