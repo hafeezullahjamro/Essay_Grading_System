@@ -6,6 +6,7 @@ import { z } from "zod";
 import { gradeEssaySchema } from "@shared/schema";
 import { fileUploadMiddleware, handleFileUpload } from "./fileUpload";
 import { gradeEssayWithAI, getRubrics } from "./openai";
+import { generateCSVExport, generateJSONExport, generatePDFExport } from "./exportUtils";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Set up authentication routes
@@ -123,6 +124,57 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.get("/api/rubrics", (req, res) => {
     const rubrics = getRubrics();
     res.json(rubrics);
+  });
+
+  // Export grading results
+  app.get("/api/export/:format", async (req, res) => {
+    if (!req.isAuthenticated()) return res.sendStatus(401);
+    
+    const { format } = req.params;
+    const { gradingId } = req.query;
+    
+    try {
+      let gradings;
+      
+      if (gradingId) {
+        // Export single grading
+        const grading = await storage.getGradingById(parseInt(gradingId as string));
+        if (!grading || grading.userId !== req.user.id) {
+          return res.status(404).json({ message: "Grading not found" });
+        }
+        gradings = [grading];
+      } else {
+        // Export all user's gradings
+        gradings = await storage.getUserGradings(req.user.id);
+      }
+      
+      if (gradings.length === 0) {
+        return res.status(404).json({ message: "No grading results found" });
+      }
+      
+      // Generate export based on format
+      if (format === 'csv') {
+        const csvContent = await generateCSVExport(gradings);
+        res.setHeader('Content-Type', 'text/csv');
+        res.setHeader('Content-Disposition', `attachment; filename=grading-results-${Date.now()}.csv`);
+        res.send(csvContent);
+      } else if (format === 'json') {
+        const jsonContent = generateJSONExport(gradings);
+        res.setHeader('Content-Type', 'application/json');
+        res.setHeader('Content-Disposition', `attachment; filename=grading-results-${Date.now()}.json`);
+        res.send(JSON.stringify(jsonContent, null, 2));
+      } else if (format === 'pdf') {
+        const pdfBuffer = await generatePDFExport(gradings, req.user.username);
+        res.setHeader('Content-Type', 'application/pdf');
+        res.setHeader('Content-Disposition', `attachment; filename=grading-results-${Date.now()}.pdf`);
+        res.send(pdfBuffer);
+      } else {
+        res.status(400).json({ message: "Invalid export format. Supported formats: csv, json, pdf" });
+      }
+    } catch (error) {
+      console.error("Export error:", error);
+      res.status(500).json({ message: "Export failed" });
+    }
   });
   
   // Google authentication endpoint

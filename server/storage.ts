@@ -72,6 +72,8 @@ export interface IStorage {
   getUserPurchases(userId: number): Promise<Purchase[]>;
   gradeEssay(essayText: string, rubricId: number): Promise<GradingResult>;
   createGrading(grading: Omit<any, "id" | "date">): Promise<any>;
+  getGradingById(id: number): Promise<any | undefined>;
+  getUserGradings(userId: number): Promise<any[]>;
   
   sessionStore: any; // Express session store
 }
@@ -231,6 +233,30 @@ export class DatabaseStorage implements IStorage {
       scores: JSON.parse(newGrading.scores),
       recommendations: JSON.parse(newGrading.recommendations),
     };
+  }
+
+  async getGradingById(id: number): Promise<any | undefined> {
+    const [grading] = await db.select().from(gradings).where(eq(gradings.id, id));
+    if (!grading) return undefined;
+    
+    return {
+      ...grading,
+      scores: JSON.parse(grading.scores),
+      recommendations: JSON.parse(grading.recommendations),
+    };
+  }
+
+  async getUserGradings(userId: number): Promise<any[]> {
+    const userGradings = await db.select()
+      .from(gradings)
+      .where(eq(gradings.userId, userId))
+      .orderBy(desc(gradings.date));
+    
+    return userGradings.map(grading => ({
+      ...grading,
+      scores: JSON.parse(grading.scores),
+      recommendations: JSON.parse(grading.recommendations),
+    }));
   }
 }
 
