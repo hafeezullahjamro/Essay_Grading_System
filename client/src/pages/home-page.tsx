@@ -231,10 +231,10 @@ export default function HomePage() {
               <div className="absolute top-0 right-0 -mt-3 mr-4 rounded-full bg-primary/10 text-primary px-3 py-1 text-xs font-medium">
                 Popular
               </div>
-              <h3 className="text-xl font-semibold text-gray-900">5 Essay Pack</h3>
+              <h3 className="text-xl font-semibold text-gray-900">3 Core Pack</h3>
               <p className="mt-4 text-gray-500">Best value for occasional use</p>
-              <p className="mt-8 text-4xl font-extrabold text-gray-900">$5.00</p>
-              <p className="mt-2 text-sm text-gray-500">$1.00 per essay</p>
+              <p className="mt-8 text-4xl font-extrabold text-gray-900">$24.99</p>
+              <p className="mt-2 text-sm text-gray-500">$4.17 per essay</p>
               <ul className="mt-6 space-y-4 flex-1">
                 <li className="flex items-start">
                   <div className="flex-shrink-0">
@@ -270,10 +270,10 @@ export default function HomePage() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <h3 className="text-xl font-semibold text-gray-900">10 Essay Pack</h3>
+              <h3 className="text-xl font-semibold text-gray-900">10 Super Core Pack</h3>
               <p className="mt-4 text-gray-500">Ideal for regular grading needs</p>
-              <p className="mt-8 text-4xl font-extrabold text-gray-900">$8.50</p>
-              <p className="mt-2 text-sm text-gray-500">$0.85 per essay</p>
+              <p className="mt-8 text-4xl font-extrabold text-gray-900">$45.99</p>
+              <p className="mt-2 text-sm text-gray-500">$3.83 per essay</p>
               <ul className="mt-6 space-y-4 flex-1">
                 <li className="flex items-start">
                   <div className="flex-shrink-0">
@@ -309,10 +309,14 @@ export default function HomePage() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              <h3 className="text-xl font-semibold text-gray-900">Unlimited Monthly</h3>
+              <h3 className="text-xl font-semibold text-gray-900">Power User Monthly</h3>
               <p className="mt-4 text-gray-500">For power users and institutions</p>
-              <p className="mt-8 text-4xl font-extrabold text-gray-900">$15.00</p>
-              <p className="mt-2 text-sm text-gray-500">per month</p>
+              <div className="mt-8">
+                <Link href="/contact">
+                  <a className="text-4xl font-extrabold text-primary hover:text-primary/80">Please Contact</a>
+                </Link>
+              </div>
+              <p className="mt-2 text-sm text-gray-500">custom pricing</p>
               <ul className="mt-6 space-y-4 flex-1">
                 <li className="flex items-start">
                   <div className="flex-shrink-0">

@@ -1,0 +1,821 @@
+continue from pricing section 
+
+
+there is 2nd card main heading is written as "5 Essay Pack"
+Write it as 3 Core Pack 
+change price from "$5.00" to "$24.99"
+and devide the price in 6 essays and write below "$1.00 per essay" fix this division with current updated price
+
+
+
+
+there is 3rd card main heading is written as "10 Essay Pack"
+write it as "10 Super Core Pack" 
+also update price from "$8.50" to "$45.99"
+also devide this price in 12 essays and write below per essay price
+
+
+
+last card's main heading is "Unlimited Monthly"
+write it as "Power User Monthly"
+
+at pricing which is written as "$15.00" 
+Replace it with a link "Please Contact" after clicking it should bring user to contact us page: (add a suitable form for contact us and all messages should show in admin panel from where admin can click on clients email and it redirect to email sending page of gmail )
+
+
+
+After login on "Grade Essay" page  the results must be brought in given rubrics matrics and should look like a professional standrized grading system.
+
+add more things in results like any improvements suggested with refrence from essay uploaded by user & graph should contain standardized rubric matrics like given. a short summery on grading.
+
+
+grading points should be standardized 
+
+make all results look professional and deeply assessed use graphs or charts what ever makes it suitable 
+
+
+
+
+
+
+
+and for footers section I need the following changes
+
+there should be 4 main headings like given in screenshot 
+
+
+
+
+Company (it contains lables that redirect to given link)
+
+label: "Corestone Tutors"   > Link "www.corestonetutors.com"
+label: "Corestone Speakers"   > Link "www.corestonespekers.com"
+label: "Corestone Chat"   > Link "www.corestonechat.com"
+label: "Corestone Art"   > Link "www.corestoneart.com"
+
+
+below in short dim writing "Copyright 2025 Corestone Education Ltd.
+
+
+
+
+
+on right side of Company there is "Tutors" & "Resources" Sections Remove them and keep the last thing which is logo of "TutorChase" replace it with CorestoneGrader logo given"
+
+also replace email "info@tutorchase.com" with "Email: contact@corestone.education
+
+
+
+change the phone number written below with new number "1902 707 6700"
+
+
+here are social media icons keep icons only of "whats App, Instagram & LinkedIn"
+
+
+below this there is dim lighted 
+"Privacy Policy"
+"Terms and Conditions"
+"Safeguarding"
+
+
+these should contain following content with seprate sections or pages on click with main heading 
+
+
+
+
+
+make sure to change all names and links for this site CorestoneGrader. as titles, email, phone and links. Remove everything of tutorchase.
+
+
+
+"Privacy Policy" 
+
+
+The effective date of this Privacy Policy is 14 August 2023
+
+Your Privacy is important to us.
+
+We take your privacy and personal data very seriously and are committed to maintaining the highest personal data protection standards, compliance with the law and best business practices.
+
+We own and operate the website https://www.tutorchase.com and respect the privacy of anyone who uses the site.
+
+Our website gathers important information from its visitors and customers. This Privacy Policy is published to communicate how your Data is collected, used and protected.
+
+This Policy specifically applies to our business and services, clients, students, tutors, and any other organisation or individual using our services.
+
+Compliance with the law
+
+Our Privacy Policy aims to comply with the UK Data Protection Act 2018 (DPA) and the UK and EU General Data Protection Regulation 2018 (GDPR).
+
+This Policy applies to our services, this website, staff, representatives, tutors, clients, students, independent contractors, affiliates, email and communication between us and any face-to-face meetings.
+
+We have divided this Policy into six sections to make it easier for you to find the information you need.
+
+Information, who we are and what our obligations are.
+Disclosure: who collects your data and what is collected.
+Purpose and legal basis: why we collect your data and information, how we use it, and our legal basis for processing your data.
+Security: how we keep your data safe and how we store it.
+Access: how you access your data, change or edit it, and your data protection rights.
+Accountability: how you can correct your data and contact the person responsible for overseeing your data.
+
+1. INFORMATION
+
+About Us
+
+We are: TutorChase Ltd
+
+Registered office: 71-75 Shelton Street, London, WC2H 9JQ
+
+Company Number: 12929942
+
+ICO Registration number: ZA825574
+
+We are the Data Controller
+
+We own and operate the website https://www.tutorchase.com for matching tutors with Clients.
+
+We are the data controller of personal data and may have a Data Processing Agreement with our partners and affiliates if necessary to ensure that your Data is handled appropriately, correctly, and in compliance with the General Data Protection Act 2018 (DPA) and the UK General Data Protection Regulation 2018 (GDPR). In some cases, we may be the data processor; in this case, we will ensure that we have taken appropriate steps to safeguard your data and comply with the law.
+
+How this notice affects you
+
+We are committed to safeguarding your privacy. This Privacy Policy will help you understand why and how we collect and process your information and how we store your information and keep it safe. This Policy also explains your rights, helping you make informed choices when browsing our website and using our services. In addition, it covers information or personal data that could identify you and information that could not.
+
+The law requires us to tell you about your rights, our obligations concerning the collecting processing, and how we look after your personal data. For more information on the relevant legislation, please go to www.knowyourprivacyrights.org
+
+Cookies
+
+We also use cookies on our website. You will be asked for your consent to use cookies when you first visit our site. Please read our Cookie Policy for more information.
+
+2. DISCLOSURE
+
+Data we collect
+
+Categories of data being processed
+
+Basic identifiable data: name, email address, correspondence address, phone number, ID, and, in some cases, date of birth.
+Certain information needed to verify your identity, e.g. results of DBS checks
+Electronic identifiable data: Cookies, IP addresses, cookies, and beacons.
+Electronic location data: tracking technology.
+Internet activity, e.g. browsing history, search history.
+We get the categories of information listed above from the following sources.
+
+1. Directly from you, for example, when you give us your name and email address.
+
+2. Indirectly from you, for example, observing your actions on our website.
+
+We also collect the following information for business purposes.
+
+Auditing
+Detecting security incidents
+Debugging to identify and repair errors
+Keeping records under a legal obligation
+Short-term uses
+Internal research for technological development and demonstration
+Testing or improving the quality or safety of a service
+Specific Data We Collect
+
+We also collect your information when you use our services, enter an agreement with us, choose to subscribe to our newsletter, register on our website, become a member, chat with one of our advisors online or contact us.
+
+We may process information to be included in your personal profile on our website. This profile data may include your name, address, telephone number, email address, gender, date of birth, and educational details and requirements.
+
+We may process the personal data you provided when using our services. This service data may include information about academic performance and any relevant factors,current, past or future academic institutions. We gather this information directly from you. In addition, service data may be processed to provide our services more effectively.
+
+Google Analytics
+
+Google Analytics is an analytics service which supplies statistics and basic analytical tools for search engine optimisation and marketing purposes.
+
+Here are some examples of how Google may collect information from you.
+
+Terms you search for.
+Views and interactions with content and ads.
+People with whom you communicate or share content.
+Activity on third-party sites and apps that use our services.
+Google may collect information about your location using yourGPS and other sensor data from your device or your IP address.
+
+Google Analytics uses technologies to collect and store information, including cookies, pixel tags and local storage, such as browser web storage or application data caches, databases, and server logs.
+
+However, you may opt out at any time.
+
+If you would like to opt out of tracking by Google Analytics on our website, you can do so here: https://tools.google.com/dlpage/gaoptout.
+
+Please read Google's Privacy Notice if you would like more information on how they keep your data safe at: https://policies.google.com/privacy.
+
+Google Fonts
+
+We use Google fonts; this means that because Google needs to know where to send the fonts when you request them, they use your IP address to identify your device and location. Bear in mind that their servers are in the US.
+
+We collect data if you voluntarily complete a client or user survey or provide feedback on our App.
+
+We may also indirectly receive your data from third-party websites or referrals from other companies and social media outlets.
+
+Clients and Tutors
+
+We may disclose enquiry, profile, service, or correspondence data to another or multiple clients to introduce the tutor to the client.
+
+Additionally, we may share your data with couriers, postal operators, mail servers, law firms and accountancy firms.
+
+Third Parties
+
+Information we obtain from third parties
+
+
+Although we do not disclose your personal information to any third party unless we have stated otherwise in this Policy, we sometimes receive data that is indirectly made up of your personal information from third parties whose services we use.
+
+No such information is personally identifiable to you.
+
+Credit reference
+
+To assist in combating fraud, we share information with credit reference agencies concerning our clients or customers who instruct their credit card issuer to cancel payment to us without having first provided an acceptable reason for us to refund their money.
+
+3. PURPOSE AND LEGAL BASIS
+
+Under GDPR, we need a legal reason or basis to collect, process and store your personal data. This does not mean that we need your consent in every situation. We may use a different legal basis, giving us the right to process particular data.
+
+We may process your data for the following reasons:
+
+1. We have a legitimate interest as our legal basis to use your data to increase the efficiency of our business and the operation of our website; we use TutorCruncher to administer and manage your account and our service, compile anonymous statistical Data and analysis for use internally, request feedback and contact you about your use of our website or products, responding to your enquiries and correspondence, resolve issues, disputes and troubleshoot problems, support for our website and services.
+
+2. Correspondence, resolve issues, disputes and troubleshooting problems, support for our website and services.
+
+3. Because we have an agreement to provide our Services, our legal basis for processing your Data is that it is necessary to perform that Contract. This also includes pre-contractual negotiations and after-sales care or processing any data concerning that contract, for example, introducing Tutors to Clients. Therefore, if processing your Data is required outside that contractual relationship, we must use a different legal basis.
+
+4. Data processing is necessary to send you marketing information, such as a newsletter. In this situation, consent will be our legal basis. (Article 6 (1) (a).
+
+5. When we need to optimise service processes for sales and after-sales care, including complaints or responding to unsolicited communication from you to which we believe you would expect a response, protecting and asserting the legal rights of any party, insuring against or obtaining professional advice that is required to manage business risk, protecting your interests where we believe we must do so. We use legitimate interest (Article 6(1)(f) GDPR) as our legal basis for processing this type of personal data.
+
+6. In some instances, we need to archive and retain data and records to comply with the law or provide proof of transactions or facts and secure information in the event of a legal requirement to prove facts. For example, sales invoices are required by the tax office by law or to comply with the Agency Employment Act 1973. Our legal basis for processing this type of personal data is that we have alegal obligation (Article 6(1)(c) GDPR);
+
+7. It is also in our Legitimate interest as our legal basis when we use your personal data obtained by third parties. If we use Google Analytics or Google Fonts to help provide, improve and market our service. However, in some cases, your consent may be required, for example, using third-party cookies.
+
+8. If there are any allegations, investigations or defences against legal claims which are our legitimate interest (Article 6(1)(f) GDPR
+
+Your Consent
+
+You do not always have to give your consent for us to process your personal data. For example, if you have an agreement with us, we need to be able to process your personal information so we can carry out the obligations under that contract.
+
+However, in some cases, you must give us consent to use your data in situations where we do not have another legal basis, or it is appropriate to ask for your consent.
+
+Information we process with your consent
+Through specific actions when there is no contractual relationship between us, such as when you subscribe to our newsletter, you provide your consent to process your Personal Data.
+
+Marketing
+
+We would like to occasionally send you information, such as newsletters by email, for which we need your consent. You must give your consent by a clear affirmative act; for example, you can opt-in to receiving newsletters by ticking the appropriate box. We are also obliged to keep a record of your consent.
+
+
+If you have given us explicit permission to do so, we may also, from time to time, pass your name and contact information to selected associates whom we consider to provide services or products you would find useful.
+
+
+We continue to process your information on this basis until you withdraw your consent, or we can assume that your consent no longer exists.
+
+
+You may withdraw your consent at any time by instructing us at info@tutorchase.com
+
+
+
+However, if you do so, you may be unable to use some of our websites or services.
+
+Opt-out or unsubscribe
+
+You may withdraw your consent for us to use data where you have given your consent, for example, receive newsletters.
+
+Or you may ask us to remove or delete your information from our systems and databases.
+
+To unsubscribe or opt out, email us at info@tutorchase.com
+
+Information concerning children
+
+Only children over 16 (this may vary in your jurisdiction) can consent to their data use. Therefore, we cannot ask for or process data from children under 16 without consent from someone who holds parental responsibility for the child given in writing.
+
+If you are under 16, you may only use our website with consent from a parent or guardian.
+
+4. SECURITY
+
+How your Data is stored
+
+We process your information to provide, improve, and administer our Services, sell products, communicate with you for security and fraud prevention, and comply with the law. We may also process your information for other purposes with your consent. We process your Data only when we have a valid legal reason to do so
+
+When you give us your data, such as name and email address;
+
+1. We may store some of your information on specific platforms we use to operate our business: Tutorcruncher, Monday.com, Google Workspace, Asana, and TextMagic. If you would like to learn more about how they look after your data and what security measures they have in place, please get in touch with them directly. Furthermore, to fulfil our responsibilities under GDPR and ensure that your personal data is safe and looked after in jurisdictions that do not have adequacy status, we may have an appropriate Data Protection Addendum (DPA) in place with those companies with their servers outside the EU or UK.
+
+2. Store in our computer system, including cloud-based management and accountancy software we use to operate our business securely encrypted and only accessible by authorised representatives or staff.
+
+Your Payments
+Your payment information is never taken by us or transferred to us through our website or otherwise. Our employees and contractors never have access to it.
+
+
+Any payments you make will be through BQIC, who will send you an appropriate invoice.
+
+How long we keep your Data
+
+If you have given consent for us to process your personal data, it will be stored until you withdraw your consent or we no longer need it.
+
+We will keep your personal information only as long as you use our services or until our contract has finished. However, we do not delete all your Data immediately after you have used our services in case you return to use our services again. We will carefully consider how long we store your data and will only keep it if we can justify its retention.
+
+When we no longer need your data, we will delete it from our servers and systems.
+
+Additionally, we may be required to store specific data and information by law, which we must comply with. For example, invoices must be kept for a particular time as tax records (for example, in the UK, it is six years) or Under the Employment Agency Act 1973; we must keep records for a year.
+
+Sending a message to our support team
+When you contact us, whether by telephone, through our website or by email, we collect the Data you have given us to reply with the information you need.
+
+We record your request and our reply to increase the efficiency of our business.
+
+
+We keep personally identifiable information associated with your messages, such as your name and email address, to track our communications with you and provide a high-quality service.
+
+Data Encryption
+We use Secure Sockets Layer (SSL) certificates to verify our identity in your browser and to encrypt any data you give us.
+
+
+Whenever information is transferred between us, you can check that it is done using SSL by looking for a closed padlock symbol or other trust marks in your browser's URL bar or toolbar.
+
+5. ACCESS
+
+You have the following rights.
+
+You have the following rights under the General Data Protection Regulation(GDPR). Please contact us if you would like to exercise any of these rights.
+
+The right of access – You have the right to ask us to give you copies of your data. (Article 15 GDPR)
+
+The right to correct data – You have the right to ask us to correct any information you believe is inaccurate. You also have the right to ask us to complete the information you think is incomplete. (Article 16 GDPR)
+
+The right to delete data – You have the right to ask us to delete your data. (Article 17 GDPR)
+
+The right to limit processing – You have the right to ask us to restrict the processing of your data. (18 GDPR) For example, you can ask us to stop processing your data until you have corrected an inaccuracy.
+
+The right to object to processing – You have the right to object to us processing your data.
+
+The right to transfer data – You can ask us to transfer your data to another organisation or directly to you.
+
+The right to make a complaint – You have the right to make a complaint to the Information Commissioner's Office (ICO) or the equivalent authority in your region.
+
+If you would like to review or update the Personal Data we hold about you, please log in to your account. You may also obtain a copy of any information that is not provided on our website by sending us a request at info@tutorchase.com
+
+
+We have 30 days to respond to your request. After receiving the request, we will tell you when we expect to provide you with the information. We may be entitled to charge a small fee for providing this information under certain circumstances, but in most cases, this will be free of charge.
+
+
+Data removal
+
+Please contact us at info@tutorchase.com if you want us to remove or delete your Personal Data. However, this may mean we cannot offer you our full service and products.
+
+To protect your privacy, we will carry out identity checks to verify it is you before you can access, edit or delete your Personal Data or exercise your rights.
+
+Changes to this privacy policy
+
+We may make changes to this privacy policy at any time by notifying you on this page and sometimes within this App. We may send you notice using your contact details if legally and technically applicable. We strongly recommend that you check this page often and refer to the last modification date at the bottom of this page.
+
+Third-Party Websites
+
+This website may contain links to other websites. We are not responsible for the privacy practices or the content of these other websites. Customers and visitors must check the policy statements of these other websites to understand their policies. Customers and visitors who access a linked site may disclose their private information. It is your responsibility to keep such information private and confidential.
+
+Complaints
+When we receive a complaint, we record all the information you give us.
+We use that information to resolve your complaint.
+
+If your complaint reasonably requires us to contact some other person, we may decide to give to that other person some of the information contained in your complaint. We do this as infrequently as possible, but it is a matter of our sole discretion as to whether we give information and, if we do, what that information is.
+
+
+We may also compile statistics showing information obtained from this source to assess the level of service we provide, but not in a way that could identify you or any other person.
+
+6. ACCOUNTABILITY
+
+How to contact us
+
+If you have any questions about our Privacy Policy, the Data we hold on you, or you would like to use one of your data protection rights or to correct any inaccurate data, opt-out or cancel your consent. Please do not hesitate to contact us; we have one month to respond to your request.
+
+Your Data is important, and we take our legal responsibilities seriously. Therefore, we are more than happy to deal with any issues or questions you may have concerning your data.
+
+TutorChase Ltd
+
+71-75 Shelton Street,
+
+London, WC2H 9JQ
+United Kingdom
+
+Or email us at info@tutorchase.com
+
+How to contact an appropriate authority
+
+If you wish to make a complaint or you feel that we have not addressed your concerns satisfactorily, you have a right to lodge a complaint with the Information Commissioner's Office (ICO) at:
+
+Information Commissioner's Office
+Wycliffe House
+Water Lane
+Wilmslow
+Cheshire
+SK9 5AF
+
+Telephone: 0303 123 1113
+
+For more detailed information on your data protection rights, please visit the UK ICO website at https://ico.org.uk
+
+If you do not live in the UK, you may contact the appropriate Information Commissioner's office or authority for your jurisdiction or region. You will find this information online.
+
+This Privacy Policy was updated on 14 August 2023.
+
+
+
+
+
+
+
+
+
+
+
+
+
+"Terms and Conditions"
+
+
+
+Please read the following Terms and Conditions carefully. They are important and represent a binding agreement between you and TutorChase Ltd.
+
+These Terms and Conditions are for the use of our website, using our services and any correspondence between the parties and apply to individual consumers and businesses.
+
+About Us
+
+TutorChase Ltd is a company registered in England at71-75 Shelton Street, London, WC2H 9JQ, UK. Company Number 12929942
+
+TutorChase Ltd is an Employment Agency within the definition of section 13(2) of the Employment Agency Act 1973. This means that we operate a matching service only and do not receive a fee or any payment from Tutors or any other workers for introducing them to Clients. Neither do we have any control or influence over the Tutor’s fees, payments, working practices or conditions.
+
+Background
+
+We own and operate the website https://www.tutorchase.com/, which displays our digital tutoring matching service to clients, where we introduce a tutor to a client, taking a fee from the client.in return.
+
+Your Privacy
+
+We take data protection very seriously and take all reasonable steps to look after your Personal Data. To use our Services, you may need to give us your Personal Data or personal information.You may refuse at any time to give this permission and you have the right to access your Personal Data. However, it may mean that you cannot use our Service fully.
+
+We are also obliged to keep certain records under the Employment Agency Act 1973 and The Conduct of Employment Agencies and Employment Businesses Regulations 2003.
+
+We must keep records which are sufficient to show whether the provisions of the above employment agency legislation are being complied with.
+
+We must keep any such recordsfor at least one year from the date of their creation or at least one year after we last provided services to you concerning a particular tutor.
+
+We are also required by law to obtain certain information from you, which may include; your identity, the date you require the Tutor to start work and the duration, or likely duration of the work, or any Information about the experience, training, qualifications and any authorisation which you think are necessary, or which are required by law, or by any professional body, for a tutor to possess.
+
+Please read our Privacy Policy for more information on your privacy rights and how we look after your data.
+
+Cookies
+
+Our website uses cookies; you need to agree to the use of these cookies or opt out of their use. This can be done in Cookie Settings or by using the pop-up banner on the home page when you first browse our website.Please read our Cookie Policy for more information.
+
+Definitions
+
+“TutorChase” ”We” ”Us” or “Our” (plural or singular)means TutorChase Ltd, which owns and operates the website https://www.tutorchase.com/ and introduces tutors to clients.
+
+“User” “Visitor” “Client” “you”, and “your” (plural or singular) means site visitors, clients, and any other users of the site.
+
+“Tutor” means tutor, teacher or someone who provides teaching Services.
+
+”Service” or “Services” mean the Services provided by TutorChase Ltd of introducing tutors to clients.
+
+“Parties” TutorChase Ltd and the Client collectively.
+
+“Session” means a single period in which the tutor provides the tutoring Services, for example, a maths lesson online or face to face.
+
+“Project” means the tutoring Services between the Tutor and the Client.
+
+“Website” or ”Site” Means the website www.tutorchase.com , which is owned and operated by TutorChase.
+
+1.1 Payment and Charges
+
+1.1. You must be 18 years of age or older to buy our Services. Persons under 18 must get consent from parental authority.
+
+1.2. You agree to pay all costs and charges related to the Services you have ordered from TutorChase and agree to use the correct payment facilities and processes.
+
+1.3. Prices and costs may change sometimes in the normal course of business practice.
+
+1.4. However, if we change the price after you place the order, you will be expected to pay the original price and not the changed price for that order.
+
+1.5. You agree that placing an order means you are obliged to pay for the Service you have ordered.
+
+1.6. The fee you pay for hiring the tutor will be set by the Tutor through Beijing Qizhu Information Consulting Co Ltd (BQIC), which acts on behalf of the tutor and administer the tutoring process. They will send you appropriate invoices and deal with any issues or requests concerning tutors.
+
+2. Lawful Purposes
+
+2.1. You may use our Site for lawful purposes only. You agree to be financially responsible for all purchases made by you or someone acting for you through the Site. You agree to use the Site and to purchase our Services through the Site for legitimate purposes only.
+
+2.2 You must not post or transmit any material which violates or infringes the rights of others through our Site. Or which is threatening, abusive, racist, offensive, defamatory, libellous, invasive of privacy or publicity rights, vulgar, obscene, profane, or otherwise objectionable, contains injurious formulas, recipes, or instructions, which encourages behaviour that that would be a criminal offence, give rise to civil liability, or otherwise violate any law.
+
+
+3. Site refusal
+
+3.1. We display our Services, but it is our decision if we accept your order or requests. We have the right to refuse any order, person, or entity without having to give a reason for doing so. We cannot accept an order until payment has been processed and received. We may at any time change or stop any aspect or feature of the Site as long as we have fulfilled our previous responsibilities to you, such as payment or refunds.
+
+4. Our Services
+
+4.1. We provide a digital tutoring matching service.
+
+4.2. All Tutors are provided by an independent Company.
+
+4.3. Tutors are not our representatives authorised to speak on our behalf or bind us to any agreement.
+
+
+5. Your Obligations
+
+5.1. You acknowledge and agree to give us all the relevant information necessary to be able to carry out the Services you require. For example, your aims, timescales, and expected outcomes. Lesson times and duration
+
+5.2. You acknowledge and agree to give us all the relevant information necessary to be able to carry out the Services you require—for example, your aims, timescales, and expected outcomes.
+
+5.3. You agree to fully cooperate and assist us in complying with our duties under these Terms and Conditions and relevant law.
+
+
+6. Refunds
+
+6.1. Under the Consumer Contracts (Information, Cancellation and Additional Charges) Regulations 2013, you can cancel a Service bought online within 14 days before the particular Service has started for any reason. This is sometimes called the cooling-off period. You can ask us for a refund at any time within this period.
+
+6.2. To withdraw from a contract for services within 14 days. You must give a clear statement in writing that you wish to cancel; this may be done by sending us an email.
+
+6.3. The above cooling-off period does not affect your rights under the Consumer Rights Act (2015) concerning services.
+
+6.4. This clause does not apply to refunds for tutor sessions or lessons or tutor payments, which are dealt with separately by BQIC.
+
+
+7. How to cancel within the cooling-off period
+
+7.1. If you are cancelling a service within the 14-day period, you must tell us by email that you want to cancel your contract with us, and we will give you a full refund.
+
+8. Service Description
+
+8.1. We try to describe and display our services as accurately as possible. While we want to be as clear as possible in explaining our services or giving their description or any other information, we give no guarantee that information on the Site or any other material, including emails and marketing material online or on social media, is accurate, complete, reliable, current, or error-free.
+
+8.2. We are not responsible for any inaccuracy, error, or incompleteness in our website, marketing or social media content.
+
+8.3. We may refuse or cancel any order with an incorrect price listing. However, if you have already paid for the service, you will only be charged for the lower price unless it was a genuine and honest mistake on our part that you should’ve noticed.
+
+9. Intellectual Property Rights
+
+9.1. Our Site, marketing material, online content, social media content, stationery or any other TutorChase material contains intellectual property owned by TutorChase Ltd, including trademarks, copyrights, proprietary information, and other intellectual property. You may not modify, publish, transmit, participate in the transfer or sale of, create derivative works from, distribute, display, reproduce or perform, or in any way exploit in any format any of the Site Content or intellectual property, in whole or in part, without our written permission or specific reference to an exception under UK legislation, for example,The Copyright, Designs and Patents Act 1988. We may use our right to immediately terminate this agreement without a refund if you are caught breaking this intellectual property policy.
+
+10. Termination
+
+10.1. You agree that we can terminate your use or access to this Site and our Services at any time without notice if you break any of these terms and Conditions.
+
+10.2. The term of this agreement is for the duration of the Service or until performance has been completed by both parties.
+
+10.3. This agreement can be terminated at any time for any reason by mutual agreement in writing.
+
+11. Climate Assurance
+
+11.1. Both parties agree to, wherever possible, perform their obligations under this Agreement in a way that reduces or minimises the Carbon Footprint associated with any activities under this Agreement. For example, using digital forms and communication instead of paper forms or using non-plastic items.
+
+11.2. Either party should use all reasonable efforts to make sure that any necessary third party, use such documents or plastic and perform such acts as may reasonably be required for reducing the Carbon footprint as a measure to protect the environment.
+
+12. Responsibility and Liability
+
+12.1. Nothing in the Agreement will:
+
+(a) limit or exclude the liability of a party for death or personal injury resulting from negligence;
+
+(b) limit or exclude the liability of a party for fraud or fraudulent misrepresentation by that party;
+
+(c) limit any liability of a party in any way that is not permitted under applicable law; or
+
+(d) exclude any liability of a party that may not be excluded under applicable law.
+
+12.2. We do not guarantee that your use of our service will be uninterrupted, timely, secure or error-free.
+
+12.3. We do not guarantee the results or outcomes that may be obtained from the use of our Services.
+
+12.4. You agree that from time to time, we may reasonably remove the Service for indefinite periods or cancel the service at any time without notice to you.
+
+12.5. We will not be liable in respect of any loss of profits, income, revenue, use, production, or anticipated savings or earnings you may have suffered during or after using our service
+
+12.6. We will not be liable for any loss of business, contracts, or commercial opportunities you may have suffered during or after using our service
+
+12.7. We will not be liable in respect of any loss or corruption of any data, database, or software.
+
+12.8. Subject to GDPR or the Data Protection Act 2018, if applicable, we will not be liable for any data breach or data protection losses that were contributed to or caused by you.
+
+12.9. We are not liable for any delay concerning the provision of our Services resulting from your failure or delay in complying with any of the provisions of this agreement.
+
+12.10. Content or any information we publish regarding Third Party Products or Services is only for information purposes and is not advice, recommendation or endorsement and is not intended to address Your particular requirements
+
+12.11. Neither party will be liable for any losses arising out of a Force Majeure.
+
+12.12. In no case will we, our employees or our representatives be liable for indirect, incidental, consequential or any other remedies as a result of using our Services or by any other third parties. Additionally, we are not liable for damages or remedies for website failure, error, omission, attack by hackers or pirates, interruption, delay in operation or transmission of videos, computer virus, or system failure; third-party theft of, destruction of or unauthorised access or alteration or use of your information or personal data (subject to GDPR or the Data Protection Act 2018 if applicable), whether we were negligent or not.
+
+12.13. Neither party will be liable for breach-of-contractual damages suffered by the other party that are remote or speculative or that could not have reasonably been foreseen before entering into this agreement.
+
+12.14. We provide a matching service where the tutor is an independent third party.. It is your responsibility to ensure that adequate adult supervision, if appropriate, is in place during tutorials or lessons.
+
+12.15. We are not responsible or liable for any claims concerning any qualifications or documents given by tutors which later turn out to be inaccurate, misrepresentations or forgeries.
+
+12.16. TutorChase Ltd is not liable for any claims by you arising out of or related to tutoring by a Tutor introduced by TutorChase Ltd.
+
+
+13. Payment for loss or damage
+
+13.1. You agree to indemnify or pay us for any losses, damage, settlements, liabilities, costs, charges, assessments, and expenses, as well as third-party claims and causes of action, including, without limitation, lawyer’s fees, arising from any breach by you of any of these Terms and Conditions. You will provide us with any help that we might ask for in connection with any such defence without any charge including, without limitation, giving us such information, documents, records, and reasonable access as we see necessary. You will not resolve any third-party claim or reject any defence without our previous written permission.
+
+14. Notices
+
+14.1. Our Contact details are:
+
+TutorChase Ltd
+
+Company Number: 1292994
+
+71-75 Shelton Street,
+
+London,
+
+WC2H 9JQ,
+
+UK.
+
+14.2. All notices, requests, demands, and other communications under this agreement must be in writing and sent by email to:
+
+Email:info@tutorchase.com
+
+15. Whole Agreement
+
+15.1 These Terms and Conditions, including the Privacy Policy, Cookie Policy, and any attachments, are the whole agreement between TutorChase and you and cancel all other verbal or written understandings concerning this agreement which were made outside this agreement.
+
+16. Events or circumstances beyond our reasonable control
+
+16.1. Where an event beyond our reasonable control, known as a Force Majeure Event, gives rise to a failure or delay in either party performing its obligations under the Agreement (other than obligations to make payment), those obligations will be suspended for the duration of the Force Majeure Event.Examples of such events and circumstances, but not limited to, include fire, flood and other acts of God, strikes, trade disputes, lockouts, restrictions of imports or exports, riots, accidents, disruption to energy supplies, lockdowns, pandemics, civil commotion, acts of terrorism or war.
+
+16.2. A party who becomes aware of a Force Majeure Event which gives rise to, or which is likely to give rise to, any failure or delay in performing its obligations under the Agreement;
+
+
+(a) must notify the other; and
+
+(b) will inform the other of the period for which it is estimated that such failure or delay will continue.
+
+(c) the affected party will take reasonable steps to mitigate the effects of the Force Majeure Event.
+
+17. Invalid Clauses
+
+17.1. If an appropriate court or arbitrator decides that a clause or condition in this contract is invalid or it conflicts with a law, the invalid clause can be cut from this agreement leaving the rest of the agreement valid and unaffected.
+
+18. Right to take action
+
+18.1. If we do not take action because you have broken a clause in these Terms and Conditions, it does not mean that we will not be able to use our rights in any other situation where you breach these Terms and Conditions or other legal responsibilities or duties you have to us.
+
+19. Headings
+
+19.1. The subject headings of the paragraphs and subparagraphs of this contract are included for convenience only. They do not affect the construction or interpretation of any of its provisions.
+
+19.2. Words in the singular, plural, capitalisation and/or he/she or they are taken as interchangeable and therefore referring to the same.
+
+20. Waiver
+
+20.1. No breach of any provision of the Agreement will be waived except with the express written consent of the party not in breach.
+
+21. Variation and amendments
+
+21.1. This Agreement may not be varied or amended except by a written document signed by or on behalf of each of the parties.
+
+22. Assignment
+
+22.1. This agreement or any clause in this agreement cannot be assigned, delegated, sub-licensed, or transferred by either party unless the other party has given that party written consent.
+
+23. Privity of contract
+
+23.1. This Agreement is made for the benefit of the Parties and is not intended to benefit any third party or be enforceable by any third party. The rights of the parties to terminate, rescind, or agree to any amendment, waiver, variation or settlement under or relating to the Agreement are not subject to the consent of any third party.
+
+24.1 The law of this agreement
+
+24.1. You agree that any dispute or claim arising out of this agreement or in connection with its subject matter or formation, including non-contractual disputes or claims, will be governed and interpreted according to the law ofEngland and Wales in English. You also agree that English courts have exclusive jurisdiction except for negotiation and mediation resolution which may be used as an option before court action if both parties agree.
+
+25. Disputes
+
+25.1 Any dispute relating to this Agreement which cannot be resolved by negotiation between the parties may, within 30 days of either party giving notice to the other party that a dispute has arisen, may be submitted to mediation by a mediator mutually chosen by the Parties and that the mediation or negotiation may be conducted online in English using an accredited mediation service. The initial Mediation cost only is to be shared equally between the parties. Failing settlement of that dispute within 14 days, the dispute may be submitted by any party for a final decision to an English court which will have exclusive jurisdiction subject to the Governing Law clause above.
+
+
+
+
+
+
+
+
+
+
+
+"Safeguarding"
+
+
+The effective date of this policy is 14 September 2023
+
+TutorChase provides a matching service that introduces tutors to clients. To this end, it is not only right but essential to create and preserve a safe environment for young people to develop and grow. We take our legal and educational responsibilities seriously. We are committed to promoting children's welfare by following best practice guidance on safeguarding and expect our clients and anyone working with young people to adhere to these principles.
+
+This policy applies to our clients, students, Tutorschase and their representatives or any other individual or organisation using our services.
+
+1. Scope and Purpose:
+
+The purpose of this Safeguarding Policy is to ensure:
+
+Compliance with the following legislation and guidance, including the 'Working Together to Safeguard Children Guidance 2010, The Children Act 1989, the Children Act 2004, the Children and Young Persons Act 2008 and any other relevant legislation
+To raise awareness of child protection and safeguarding issues and procedures. They ensure that procedures are in place for identifying and reporting cases of suspected abuse and are followed by tutors, clients and TutorChase staff and representatives.
+2. Responsibilities when working with young people
+
+Everyone working with young people must follow and promote the principles of this policy and;
+
+Adhere to their duty to safeguard and promote young people's welfare.
+
+Ensure that all client or student meetings and sessions adhere to the applicable guidance on such activities and are safely conducted.
+
+Tutor guidance and teaching should be restricted to the educational context and relevant academic areas.
+
+No one should obtain or use any contact details or other information which might affect the anonymity or the Client/Tutor's professional relationship.
+
+Clients or students should not meet tutors professionally or personally before, during or after the engagement unless it has been agreed in writing.
+
+Clients and Tutors must ensure that the Sessions occur in an appropriate environment that does not display inappropriate images or activity.
+
+Clients or Tutors must not engage in, encourage, use or condone inappropriate behaviour or illegal activity during sessions.
+
+Clients or anyone working with young people must ensure that all verbal or written language and comments made when carrying out Sessions must not offend, discriminate or bring TutorChase into disrepute.
+
+Young people must be treated fairly and without prejudice or discrimination. Clients who have a disability or come from a minority ethnic or cultural group may be vulnerable to becoming victims of discrimination and prejudice, which may impact the student's well-being.
+
+All contact with young people must be appropriate and befitting the teaching environment.
+
+Client, tutor or student contributions must be valued at all times.
+
+The client must report any dispute with a tutor, young person, responsible adult, or another tutor to TutorChase management.
+
+Clients must report any inappropriate behaviour or illegal activity identified by the young person or third party during a session.
+
+Sessions may be recorded and available for review by the client, tutor, responsible adult or young person.
+
+Clients or anyone working with young people must be vigilant at all times. If they identify any signs or indications that a young person is being abused or is engaged in or the subject of any criminal activity, or the young person discloses information to the tutor or others relating to welfare issues which do not constitute criminal activity or abuse but impact the Child's welfare, they must notify TutorChase, the police or any relevant authority.
+
+Clients must follow the above and may face legal action if any part of this policy is breached.
+
+3. Compliance
+
+Clients, tutors, young people, TutorChase staff or representatives are responsible for familiarising themselves with this Safeguarding Policy.
+
+Any person found carrying out any illegal activity whilst using TutorChase's services or the Website will be reported to the police and may be barred from the system.
+
+Any client, website user or tutor reported or found causing harm to a young person, including bullying, harassment or sexual abuse, will be reported to the police and banned from the system.
+
+4. Review:
+
+TutorChase regularly reviews this Safeguarding Policy and Safeguarding Procedure to ensure it is adequate and relevant and complies with National safeguarding standards.
+
+All parties concerned will be notified of relevant changes by amending this policy or by email.
+
+5. Miscellaneous
+
+TutorChase does not automatically ask to view Tutor's DBS checks unless requested by the client. Clients may request to see a Tutor's DBS check before a Project begins. The client must verify the status of a Tutor's DBS check and determine if they would like to proceed with the tutor.
+
+Clients may request that Tutors undertake the HSQE CPD-accredited Safeguarding Children Level 1 course before the Project begins. Please go to https://hsqe.co.uk/course/safeguarding-children/ for more information.
+
+TutorChase does not tolerate any form of abuse by Clients or Tutors. Clients who violate this policy will have their Projects terminated and may be reported to the relevant authority.
+
+
+
+For further information on this policy, please get in touch with TutorChase at:
+
+71-75 Shelton Street,
+
+London, WC2H 9JQ
+
+United Kingdom
+
+Or email us at info@tutorchase.com
+
+
+
+This policy was updated 14 September 2023
+
+
+
+
+
+
+
+
+
+
+NOTE: After implementing all these things make sure everything works fine and aligned with backend as well specially payment logic payment method will be added soon 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+

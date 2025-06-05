@@ -9,6 +9,7 @@ import GradePage from "@/pages/grade-page";
 import ProfilePage from "@/pages/profile-page";
 import AdminPage from "@/pages/admin-page";
 import ExportPage from "@/pages/export-page";
+import ContactPage from "@/pages/contact-page";
 import { ProtectedRoute } from "./lib/protected-route";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
@@ -21,6 +22,7 @@ function Router() {
         <Switch>
           <Route path="/" component={HomePage} />
           <Route path="/auth" component={AuthPage} />
+          <Route path="/contact" component={ContactPage} />
           <ProtectedRoute path="/dashboard" component={DashboardPage} />
           <ProtectedRoute path="/grade" component={GradePage} />
           <ProtectedRoute path="/export" component={ExportPage} />
