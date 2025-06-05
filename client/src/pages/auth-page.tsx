@@ -193,7 +193,7 @@ export default function AuthPage() {
                 </div>
 
                 <div className="mt-6">
-                  <GoogleSignIn />
+                  <GoogleSignIn mode={activeTab === "register" ? "signup" : "login"} />
                 </div>
               </div>
             </CardContent>

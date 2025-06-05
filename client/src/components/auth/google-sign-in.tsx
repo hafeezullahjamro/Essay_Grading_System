@@ -7,7 +7,11 @@ import { apiRequest } from "@/lib/queryClient";
 import { useQueryClient } from "@tanstack/react-query";
 import { useAuth } from "@/hooks/use-auth";
 
-export function GoogleSignIn() {
+interface GoogleSignInProps {
+  mode?: "login" | "signup";
+}
+
+export function GoogleSignIn({ mode = "login" }: GoogleSignInProps) {
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
   const queryClient = useQueryClient();
@@ -34,9 +38,20 @@ export function GoogleSignIn() {
       }
     } catch (error: any) {
       console.error("Google sign-in error:", error);
+      
+      let errorMessage = "Failed to sign in with Google";
+      
+      if (error.code === "auth/configuration-not-found") {
+        errorMessage = "Firebase configuration error. The current domain needs to be authorized in Firebase Console.";
+      } else if (error.code === "auth/popup-blocked") {
+        errorMessage = "Popup blocked. Please allow popups for this site or try again.";
+      } else if (error.code === "auth/popup-closed-by-user") {
+        errorMessage = "Sign-in cancelled. Please try again.";
+      }
+      
       toast({
         title: "Sign-in Failed",
-        description: error.message || "Failed to sign in with Google",
+        description: errorMessage,
         variant: "destructive",
       });
     } finally {
@@ -107,7 +122,7 @@ export function GoogleSignIn() {
           </g>
         </svg>
       )}
-      <span>Sign in with Google</span>
+      <span>{mode === "signup" ? "Sign up with Google" : "Sign in with Google"}</span>
     </Button>
   );
 }

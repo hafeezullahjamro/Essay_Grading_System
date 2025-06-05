@@ -25,4 +25,13 @@ googleProvider.setCustomParameters({
   prompt: 'select_account'
 });
 
+// Add domain configuration check
+const isDevelopment = window.location.hostname === 'localhost' || 
+                     window.location.hostname === '127.0.0.1' || 
+                     window.location.hostname.includes('replit.dev');
+
+if (isDevelopment) {
+  console.warn('Firebase: Running in development mode. Ensure your domain is authorized in Firebase Console.');
+}
+
 export default app;
