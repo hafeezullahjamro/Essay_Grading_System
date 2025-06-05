@@ -56,12 +56,12 @@ export default function HomePage() {
                     </Link>
                   </div>
                   <div className="mt-3 sm:mt-0 sm:ml-3">
-                    <a
-                      href="#features"
+                    <button
+                      onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })}
                       className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-primary bg-primary/10 hover:bg-primary/20 md:py-4 md:text-lg md:px-10"
                     >
                       Learn more
-                    </a>
+                    </button>
                   </div>
                 </motion.div>
               </div>

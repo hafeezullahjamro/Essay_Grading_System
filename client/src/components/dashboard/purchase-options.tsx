@@ -88,9 +88,9 @@ export default function PurchaseOptions() {
     }
   });
   
-  // Handle purchase
+  // Handle purchase - redirect to Stripe checkout
   const handlePurchase = (bundleId: number) => {
-    purchaseMutation.mutate(bundleId);
+    window.location.href = `/checkout?bundle=${bundleId}`;
   };
 
   return (

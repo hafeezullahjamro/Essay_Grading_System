@@ -13,6 +13,7 @@ import ContactPage from "@/pages/contact-page";
 import PrivacyPolicyPage from "@/pages/privacy-policy";
 import TermsConditionsPage from "@/pages/terms-conditions";
 import SafeguardingPage from "@/pages/safeguarding";
+import CheckoutPage from "@/pages/checkout";
 import { ProtectedRoute } from "./lib/protected-route";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
@@ -34,6 +35,7 @@ function Router() {
           <ProtectedRoute path="/export" component={ExportPage} />
           <ProtectedRoute path="/profile" component={ProfilePage} />
           <ProtectedRoute path="/admin" component={AdminPage} />
+          <ProtectedRoute path="/checkout" component={CheckoutPage} />
           <Route component={NotFound} />
         </Switch>
       </main>
