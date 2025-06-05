@@ -1,4 +1,4 @@
-import { pgTable, text, serial, integer, timestamp, foreignKey } from "drizzle-orm/pg-core";
+import { pgTable, text, serial, integer, timestamp, foreignKey, varchar } from "drizzle-orm/pg-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 import { relations } from "drizzle-orm";
@@ -58,6 +58,17 @@ export const gradingsRelations = relations(gradings, ({ one }) => ({
     references: [users.id],
   }),
 }));
+
+// Contact messages table schema
+export const contactMessages = pgTable("contact_messages", {
+  id: serial("id").primaryKey(),
+  name: text("name").notNull(),
+  email: text("email").notNull(),
+  subject: text("subject").notNull(),
+  message: text("message").notNull(),
+  status: text("status").default("unread").notNull(),
+  date: timestamp("date").defaultNow().notNull(),
+});
 
 // Create Zod schemas for validation
 export const insertUserSchema = createInsertSchema(users).omit({
