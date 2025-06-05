@@ -7,6 +7,12 @@ import { gradeEssaySchema } from "@shared/schema";
 import { fileUploadMiddleware, handleFileUpload } from "./fileUpload";
 import { gradeEssayWithAI, getRubrics } from "./openai";
 import { generateCSVExport, generateJSONExport, generatePDFExport } from "./exportUtils";
+import Stripe from "stripe";
+
+// Initialize Stripe with your secret key
+// TODO: Replace with your actual Stripe secret key when deploying
+// Get this from: https://dashboard.stripe.com/apikeys
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || 'sk_test_dummy_key');
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Set up authentication routes
@@ -225,6 +231,51 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
   
+  // Stripe payment endpoints
+  app.post("/api/create-payment-intent", async (req, res) => {
+    try {
+      const { bundleId, amount } = req.body;
+      
+      if (!req.isAuthenticated()) {
+        return res.status(401).json({ message: "Authentication required" });
+      }
+
+      // Create payment intent with Stripe
+      const paymentIntent = await stripe.paymentIntents.create({
+        amount: Math.round(amount * 100), // Convert to cents
+        currency: "usd",
+        metadata: {
+          userId: req.user.id.toString(),
+          bundleId: bundleId ? bundleId.toString() : 'custom'
+        }
+      });
+
+      res.json({ clientSecret: paymentIntent.client_secret });
+    } catch (error: any) {
+      console.error("Payment intent creation failed:", error);
+      res.status(500).json({ 
+        message: "Error creating payment intent: " + error.message 
+      });
+    }
+  });
+
+  // Get bundle by ID
+  app.get("/api/bundles/:id", async (req, res) => {
+    try {
+      const bundleId = parseInt(req.params.id);
+      const bundle = await storage.getBundleById(bundleId);
+      
+      if (!bundle) {
+        return res.status(404).json({ message: "Bundle not found" });
+      }
+      
+      res.json(bundle);
+    } catch (error) {
+      console.error("Bundle fetch error:", error);
+      res.status(500).json({ message: "Failed to fetch bundle" });
+    }
+  });
+
   // Contact form submission endpoint
   app.post("/api/contact", async (req, res) => {
     try {
