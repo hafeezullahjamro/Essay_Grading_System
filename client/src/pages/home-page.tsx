@@ -48,10 +48,11 @@ export default function HomePage() {
                   transition={{ duration: 0.5, delay: 0.4 }}
                 >
                   <div className="rounded-md shadow">
-                    <Link href={user ? "/dashboard" : "/auth"}>
-                      <a className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-emerald-500 hover:bg-emerald-600 md:py-4 md:text-lg md:px-10">
-                        Get started
-                      </a>
+                    <Link 
+                      href={user ? "/dashboard" : "/auth"}
+                      className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-emerald-500 hover:bg-emerald-600 md:py-4 md:text-lg md:px-10"
+                    >
+                      Get started
                     </Link>
                   </div>
                   <div className="mt-3 sm:mt-0 sm:ml-3">
