@@ -341,10 +341,11 @@ export default function HomePage() {
                   <p className="ml-3 text-sm text-gray-700">Advanced analytics</p>
                 </li>
               </ul>
-              <Link href={user ? "/dashboard" : "/auth"}>
-                <a className="mt-8 block w-full bg-gray-100 border border-gray-300 rounded-md py-2 text-sm font-medium text-gray-700 text-center hover:bg-gray-200">
-                  Get Started
-                </a>
+              <Link 
+                href={user ? "/dashboard" : "/auth"}
+                className="mt-8 block w-full bg-gray-100 border border-gray-300 rounded-md py-2 text-sm font-medium text-gray-700 text-center hover:bg-gray-200"
+              >
+                Get Started
               </Link>
             </motion.div>
           </div>
