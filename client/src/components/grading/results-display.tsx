@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Progress } from "@/components/ui/progress";
 import { GradingResult } from "@shared/schema";
 import { 
   BarChart, 
@@ -10,14 +11,13 @@ import {
   CartesianGrid, 
   Tooltip, 
   ResponsiveContainer,
-  RadialBarChart,
-  RadialBar,
-  PieChart,
-  Pie,
-  Cell
+  RadarChart,
+  PolarGrid,
+  PolarAngleAxis,
+  PolarRadiusAxis,
+  Radar
 } from "recharts";
-import { TrendingUp, Award, Target, CheckCircle, AlertCircle, BookOpen, Download } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { TrendingUp, Award, Target, CheckCircle, AlertCircle, BookOpen } from "lucide-react";
 import ExportOptions from "@/components/export/export-options";
 
 type ResultsDisplayProps = {
@@ -25,39 +25,46 @@ type ResultsDisplayProps = {
   gradingId?: number;
 };
 
+// IB Grade boundaries for standardized assessment
+const ibGradeBoundaries = {
+  7: { min: 80, max: 100, label: "Excellent", color: "bg-green-600" },
+  6: { min: 70, max: 79, label: "Very Good", color: "bg-green-500" },
+  5: { min: 60, max: 69, label: "Good", color: "bg-blue-500" },
+  4: { min: 50, max: 59, label: "Satisfactory", color: "bg-yellow-500" },
+  3: { min: 40, max: 49, label: "Mediocre", color: "bg-orange-500" },
+  2: { min: 30, max: 39, label: "Poor", color: "bg-red-400" },
+  1: { min: 0, max: 29, label: "Very Poor", color: "bg-red-600" }
+};
+
+function getIBGrade(score: number) {
+  // Convert 0-10 scale to 0-100 percentage
+  const percentage = (score / 10) * 100;
+  for (const [grade, boundary] of Object.entries(ibGradeBoundaries)) {
+    if (percentage >= boundary.min && percentage <= boundary.max) {
+      return { grade: parseInt(grade), ...boundary, percentage };
+    }
+  }
+  return { grade: 1, ...ibGradeBoundaries[1], percentage };
+}
+
 export default function ResultsDisplay({ results, gradingId }: ResultsDisplayProps) {
-  // Format scores data for chart
-  const scoreData = Object.entries(results.scores).map(([category, score]) => ({
-    category: category.length > 25 ? category.substring(0, 25) + "..." : category,
-    fullCategory: category,
-    score,
-    maxScore: 10,
-    percentage: (score / 10) * 100
+  const { scores, overallScore, feedback, recommendations } = results;
+  const overallGrade = getIBGrade(overallScore);
+
+  // Prepare data for charts
+  const criteriaData = Object.entries(scores).map(([criterion, score]) => ({
+    criterion: criterion.replace(/([A-Z])/g, ' $1').trim(),
+    score: score,
+    percentage: (score / 10) * 100,
+    grade: getIBGrade(score).grade
   }));
 
-  // Calculate performance level
-  const getPerformanceLevel = (score: number) => {
-    if (score >= 9) return { level: "Excellent", color: "bg-green-500", textColor: "text-green-700" };
-    if (score >= 7) return { level: "Good", color: "bg-blue-500", textColor: "text-blue-700" };
-    if (score >= 5) return { level: "Satisfactory", color: "bg-yellow-500", textColor: "text-yellow-700" };
-    if (score >= 3) return { level: "Basic", color: "bg-orange-500", textColor: "text-orange-700" };
-    return { level: "Needs Improvement", color: "bg-red-500", textColor: "text-red-700" };
-  };
+  const radarData = criteriaData.map(item => ({
+    subject: item.criterion.length > 15 ? item.criterion.substring(0, 15) + '...' : item.criterion,
+    score: item.percentage,
+    fullMark: 100
+  }));
 
-  const performance = getPerformanceLevel(results.overallScore);
-  
-  // Colors for charts
-  const chartColors = ['#3B82F6', '#10B981', '#F59E0B', '#EF4444', '#8B5CF6', '#06B6D4'];
-  
-  // Radial chart data for overall score
-  const radialData = [
-    {
-      name: 'Score',
-      value: results.overallScore,
-      fill: performance.color.replace('bg-', '#')
-    }
-  ];
-  
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },

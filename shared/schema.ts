@@ -130,3 +130,13 @@ export type LoginCredentials = {
   username: string;
   password: string;
 };
+
+// Contact message schema and types
+export const insertContactMessageSchema = createInsertSchema(contactMessages).omit({
+  id: true,
+  status: true,
+  date: true,
+});
+
+export type ContactMessage = typeof contactMessages.$inferSelect;
+export type InsertContactMessage = z.infer<typeof insertContactMessageSchema>;

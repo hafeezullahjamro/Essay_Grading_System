@@ -1,4 +1,4 @@
-import { users, purchases, gradings, type User, type InsertUser, type Purchase, type Bundle, type GradingResult } from "@shared/schema";
+import { users, purchases, gradings, contactMessages, type User, type InsertUser, type Purchase, type Bundle, type GradingResult } from "@shared/schema";
 import session from "express-session";
 import createMemoryStore from "memorystore";
 import connectPg from "connect-pg-simple";
@@ -260,6 +260,28 @@ export class DatabaseStorage implements IStorage {
       recommendations: JSON.parse(grading.recommendations),
     }));
   }
+
+  async createContactMessage(message: { name: string; email: string; subject: string; message: string }): Promise<any> {
+    const [newMessage] = await db.insert(contactMessages)
+      .values({
+        name: message.name,
+        email: message.email,
+        subject: message.subject,
+        message: message.message,
+        status: "unread"
+      })
+      .returning();
+    
+    return newMessage;
+  }
+
+  async getAllContactMessages(): Promise<any[]> {
+    const messages = await db.select()
+      .from(contactMessages)
+      .orderBy(desc(contactMessages.date));
+    
+    return messages;
+  }
 }
 
 export class MemStorage implements IStorage {
@@ -279,10 +301,12 @@ export class MemStorage implements IStorage {
     this.users = new Map();
     this.purchases = new Map();
     this.gradings = new Map();
+    this.contactMessages = new Map();
     this.currentId = {
       users: 1,
       purchases: 1,
-      gradings: 1
+      gradings: 1,
+      contactMessages: 1
     };
     
     // Seed initial users
@@ -457,6 +481,23 @@ export class MemStorage implements IStorage {
       .sort((a, b) => b.date.getTime() - a.date.getTime());
     
     return userGradings;
+  }
+
+  async createContactMessage(message: { name: string; email: string; subject: string; message: string }): Promise<any> {
+    const id = this.currentId.contactMessages++;
+    const contactMessage = {
+      id,
+      ...message,
+      status: "unread",
+      date: new Date()
+    };
+    
+    this.contactMessages.set(id, contactMessage);
+    return contactMessage;
+  }
+
+  async getAllContactMessages(): Promise<any[]> {
+    return Array.from(this.contactMessages.values()).sort((a, b) => b.date.getTime() - a.date.getTime());
   }
 }
 
