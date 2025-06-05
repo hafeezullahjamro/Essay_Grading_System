@@ -22,31 +22,31 @@ export default function Sidebar({ activePage }: SidebarProps) {
         <div className="flex flex-col h-0 flex-1 bg-white border-r border-gray-200">
           <div className="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
             <div className="flex items-center flex-shrink-0 px-4">
-              <Link href="/">
-                <a className="text-2xl font-bold text-primary">CorestoneGrader</a>
+              <Link href="/" className="text-2xl font-bold text-primary">
+                CorestoneGrader
               </Link>
             </div>
             <nav className="mt-5 flex-1 px-2 bg-white space-y-1">
               {menuItems.map((item) => (
-                <Link key={item.id} href={item.path}>
-                  <a
+                <Link 
+                  key={item.id} 
+                  href={item.path}
+                  className={cn(
+                    "group flex items-center px-2 py-2 text-sm font-medium rounded-md",
+                    activePage === item.id
+                      ? "bg-primary/10 text-primary"
+                      : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+                  )}
+                >
+                  <i
                     className={cn(
-                      "group flex items-center px-2 py-2 text-sm font-medium rounded-md",
+                      `${item.icon} mr-3`,
                       activePage === item.id
-                        ? "bg-primary/10 text-primary"
-                        : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+                        ? "text-primary"
+                        : "text-gray-400 group-hover:text-gray-500"
                     )}
-                  >
-                    <i
-                      className={cn(
-                        `${item.icon} mr-3`,
-                        activePage === item.id
-                          ? "text-primary"
-                          : "text-gray-400 group-hover:text-gray-500"
-                      )}
-                    ></i>
-                    {item.label}
-                  </a>
+                  ></i>
+                  {item.label}
                 </Link>
               ))}
             </nav>
@@ -63,10 +63,8 @@ export default function Sidebar({ activePage }: SidebarProps) {
                   <p className="text-sm font-medium text-gray-700 group-hover:text-gray-900">
                     {user?.email}
                   </p>
-                  <Link href="/profile">
-                    <a className="text-xs font-medium text-gray-500 group-hover:text-gray-700">
-                      View profile
-                    </a>
+                  <Link href="/profile" className="text-xs font-medium text-gray-500 group-hover:text-gray-700">
+                    View profile
                   </Link>
                 </div>
               </div>
