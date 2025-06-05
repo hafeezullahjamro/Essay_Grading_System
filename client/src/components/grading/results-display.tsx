@@ -86,109 +86,249 @@ export default function ResultsDisplay({ results, gradingId }: ResultsDisplayPro
       initial="hidden"
       animate="visible"
       variants={containerVariants}
+      className="space-y-6"
     >
-      <Card className="bg-white shadow overflow-hidden sm:rounded-lg">
-        <CardContent className="px-4 py-5 sm:px-6 flex justify-between items-center">
-          <div>
-            <h3 className="text-lg leading-6 font-medium text-gray-900">
-              Grading Results
-            </h3>
-            <p className="mt-1 max-w-2xl text-sm text-gray-500">
-              AI-generated assessment and feedback.
-            </p>
-          </div>
-          <div>
-            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-sm font-medium bg-green-100 text-green-800">
-              <i className="fas fa-check-circle mr-1"></i>
-              Completed
-            </span>
-          </div>
-        </CardContent>
-
-        {/* Score Breakdown */}
-        <motion.div className="border-t border-gray-200" variants={itemVariants}>
-          <div className="px-4 py-5 sm:px-6">
-            <h4 className="text-base font-medium text-gray-900 mb-4">Score Breakdown</h4>
-            <div className="mb-6 h-80">
-              <ResponsiveContainer width="100%" height="100%">
-                <BarChart
-                  data={scoreData}
-                  margin={{ top: 10, right: 30, left: 0, bottom: 40 }}
-                >
-                  <CartesianGrid strokeDasharray="3 3" vertical={false} />
-                  <XAxis 
-                    dataKey="category" 
-                    angle={-45}
-                    textAnchor="end"
-                    height={60}
-                    interval={0}
-                  />
-                  <YAxis domain={[0, 10]} />
-                  <Tooltip formatter={(value) => [`${value}/10`, "Score"]} />
-                  <Bar dataKey="score" fill="#3B82F6" barSize={50} />
-                </BarChart>
-              </ResponsiveContainer>
-            </div>
-            <div className="pt-4 border-t border-gray-200">
-              <div className="flex items-center justify-between">
-                <div className="text-base font-medium text-gray-900">Overall Score</div>
-                <div className="text-base font-medium text-gray-900">{results.overallScore}/10</div>
-              </div>
-              <div className="mt-1 relative">
-                <div className="overflow-hidden h-3 text-xs flex rounded bg-gray-200">
-                  <div 
-                    style={{ width: `${results.overallScore * 10}%` }} 
-                    className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-green-500"
-                  ></div>
+      {/* Professional Header with IB Grade */}
+      <motion.div variants={itemVariants}>
+        <Card className="border-2 border-primary/20">
+          <CardHeader className="text-center bg-gradient-to-r from-primary/5 to-primary/10">
+            <CardTitle className="text-2xl">IB Assessment Results</CardTitle>
+            <CardDescription>Standardized International Baccalaureate Grading Matrix</CardDescription>
+          </CardHeader>
+          <CardContent className="pt-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="text-center">
+                <div className={`inline-flex items-center justify-center w-20 h-20 rounded-full text-white text-2xl font-bold ${overallGrade.color}`}>
+                  {overallGrade.grade}
                 </div>
+                <p className="mt-2 font-semibold">IB Grade</p>
+                <p className="text-sm text-gray-600">{overallGrade.label}</p>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-primary">{overallGrade.percentage.toFixed(1)}%</div>
+                <p className="mt-2 font-semibold">Overall Score</p>
+                <Progress value={overallGrade.percentage} className="mt-2" />
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-gray-700">{criteriaData.length}</div>
+                <p className="mt-2 font-semibold">Criteria Assessed</p>
+                <p className="text-sm text-gray-600">IB Rubric Standards</p>
               </div>
             </div>
-          </div>
-        </motion.div>
+          </CardContent>
+        </Card>
+      </motion.div>
 
-        {/* Detailed Feedback */}
-        <motion.div className="border-t border-gray-200" variants={itemVariants}>
-          <div className="px-4 py-5 sm:px-6">
-            <h4 className="text-base font-medium text-gray-900 mb-4">Detailed Feedback</h4>
-            <div className="prose prose-sm max-w-none text-gray-700">
-              {results.feedback.split(/\. /).map((sentence, index) => (
-                <p key={index}>{sentence}.</p>
-              ))}
+      {/* Standardized Rubric Matrix */}
+      <motion.div variants={itemVariants}>
+        <Card>
+          <CardHeader>
+            <CardTitle>IB Standardized Rubric Assessment Matrix</CardTitle>
+            <CardDescription>
+              Detailed breakdown according to International Baccalaureate assessment criteria
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse border border-gray-200">
+                <thead>
+                  <tr className="bg-gray-50">
+                    <th className="border border-gray-200 px-4 py-3 text-left">Assessment Criterion</th>
+                    <th className="border border-gray-200 px-4 py-3 text-center">Score</th>
+                    <th className="border border-gray-200 px-4 py-3 text-center">IB Grade</th>
+                    <th className="border border-gray-200 px-4 py-3 text-center">Performance Level</th>
+                    <th className="border border-gray-200 px-4 py-3 text-center">Progress</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {criteriaData.map((item, index) => {
+                    const gradeInfo = getIBGrade(item.score);
+                    return (
+                      <tr key={index} className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                        <td className="border border-gray-200 px-4 py-3 font-medium">{item.criterion}</td>
+                        <td className="border border-gray-200 px-4 py-3 text-center font-bold">{item.score}/10</td>
+                        <td className="border border-gray-200 px-4 py-3 text-center">
+                          <span className={`inline-flex items-center justify-center w-8 h-8 rounded-full text-white font-bold ${gradeInfo.color}`}>
+                            {gradeInfo.grade}
+                          </span>
+                        </td>
+                        <td className="border border-gray-200 px-4 py-3 text-center">{gradeInfo.label}</td>
+                        <td className="border border-gray-200 px-4 py-3">
+                          <Progress value={item.percentage} className="w-full" />
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
             </div>
-          </div>
+          </CardContent>
+        </Card>
+      </motion.div>
+
+      {/* Performance Analytics Charts */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <motion.div variants={itemVariants}>
+          <Card>
+            <CardHeader>
+              <CardTitle>Criteria Performance Analysis</CardTitle>
+              <CardDescription>Bar chart showing performance across all assessment criteria</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="h-64">
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart data={criteriaData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis 
+                      dataKey="criterion" 
+                      angle={-45}
+                      textAnchor="end"
+                      height={80}
+                      interval={0}
+                      tick={{ fontSize: 10 }}
+                    />
+                    <YAxis domain={[0, 10]} />
+                    <Tooltip 
+                      formatter={(value) => [`${value}/10`, 'Score']}
+                      labelFormatter={(label) => `Criterion: ${label}`}
+                    />
+                    <Bar dataKey="score" fill="#3b82f6" radius={[4, 4, 0, 0]} />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+            </CardContent>
+          </Card>
         </motion.div>
 
-        {/* Improvement Suggestions */}
-        <motion.div className="border-t border-gray-200" variants={itemVariants}>
-          <div className="px-4 py-5 sm:px-6">
-            <h4 className="text-base font-medium text-gray-900 mb-4">Recommendations</h4>
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-              {results.recommendations.map((recommendation, index) => (
-                <motion.div 
-                  key={index}
-                  className="relative rounded-lg border border-gray-200 bg-white px-6 py-5 shadow-sm"
-                  variants={itemVariants}
-                >
-                  <div className="text-sm text-gray-500 mb-2">
-                    {Object.keys(results.scores)[index % Object.keys(results.scores).length]}
+        <motion.div variants={itemVariants}>
+          <Card>
+            <CardHeader>
+              <CardTitle>Performance Radar Chart</CardTitle>
+              <CardDescription>Comprehensive view of strengths and areas for improvement</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="h-64">
+                <ResponsiveContainer width="100%" height="100%">
+                  <RadarChart data={radarData} margin={{ top: 20, right: 80, bottom: 20, left: 80 }}>
+                    <PolarGrid />
+                    <PolarAngleAxis dataKey="subject" tick={{ fontSize: 10 }} />
+                    <PolarRadiusAxis 
+                      angle={90} 
+                      domain={[0, 100]} 
+                      tick={{ fontSize: 8 }}
+                    />
+                    <Radar
+                      name="Performance"
+                      dataKey="score"
+                      stroke="#3b82f6"
+                      fill="#3b82f6"
+                      fillOpacity={0.3}
+                      strokeWidth={2}
+                    />
+                    <Tooltip formatter={(value) => [`${value}%`, 'Score']} />
+                  </RadarChart>
+                </ResponsiveContainer>
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
+      </div>
+
+      {/* Professional Feedback Section */}
+      <motion.div variants={itemVariants}>
+        <Card>
+          <CardHeader>
+            <CardTitle>Comprehensive Assessment Summary</CardTitle>
+            <CardDescription>Detailed evaluation based on IB assessment standards</CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+              <h4 className="font-semibold text-blue-800 mb-2">Overall Performance Analysis</h4>
+              <p className="text-blue-700 leading-relaxed">{feedback}</p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+                <h4 className="font-semibold text-green-800 mb-2">Strengths Identified</h4>
+                <ul className="space-y-1">
+                  {criteriaData
+                    .filter(item => item.score >= 7)
+                    .map((item, index) => (
+                      <li key={index} className="text-green-700 text-sm">
+                        • Strong performance in {item.criterion}
+                      </li>
+                    ))}
+                </ul>
+              </div>
+              
+              <div className="bg-orange-50 border border-orange-200 rounded-lg p-4">
+                <h4 className="font-semibold text-orange-800 mb-2">Areas for Development</h4>
+                <ul className="space-y-1">
+                  {criteriaData
+                    .filter(item => item.score < 7)
+                    .map((item, index) => (
+                      <li key={index} className="text-orange-700 text-sm">
+                        • Focus needed on {item.criterion}
+                      </li>
+                    ))}
+                </ul>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </motion.div>
+
+      {/* Targeted Recommendations */}
+      <motion.div variants={itemVariants}>
+        <Card>
+          <CardHeader>
+            <CardTitle>Personalized Improvement Recommendations</CardTitle>
+            <CardDescription>Specific actionable steps for academic enhancement</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="grid gap-4">
+              {recommendations.map((recommendation, index) => (
+                <div key={index} className="flex items-start space-x-3 p-3 bg-gray-50 rounded-lg">
+                  <div className="flex-shrink-0">
+                    <span className="inline-flex items-center justify-center w-6 h-6 bg-primary text-white text-sm font-bold rounded-full">
+                      {index + 1}
+                    </span>
                   </div>
-                  <p className="text-sm text-gray-700">
-                    {recommendation}
-                  </p>
-                </motion.div>
+                  <div className="flex-1">
+                    <p className="text-gray-800 leading-relaxed">{recommendation}</p>
+                  </div>
+                </div>
               ))}
             </div>
-          </div>
-        </motion.div>
-      </Card>
+          </CardContent>
+        </Card>
+      </motion.div>
 
-      {/* Export Options Section */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.8 }}
-        className="mt-6"
-      >
+      {/* IB Grade Scale Reference */}
+      <motion.div variants={itemVariants}>
+        <Card>
+          <CardHeader>
+            <CardTitle>IB Grade Scale Reference</CardTitle>
+            <CardDescription>International Baccalaureate standardized grading criteria</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-1 md:grid-cols-7 gap-2">
+              {Object.entries(ibGradeBoundaries).reverse().map(([grade, info]) => (
+                <div key={grade} className="text-center p-3 border rounded-lg">
+                  <div className={`inline-flex items-center justify-center w-10 h-10 rounded-full text-white font-bold mb-2 ${info.color}`}>
+                    {grade}
+                  </div>
+                  <p className="text-xs font-semibold">{info.label}</p>
+                  <p className="text-xs text-gray-600">{info.min}-{info.max}%</p>
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+      </motion.div>
+
+      {/* Export Options */}
+      <motion.div variants={itemVariants}>
         <ExportOptions gradingId={gradingId} gradingCount={1} />
       </motion.div>
     </motion.div>
