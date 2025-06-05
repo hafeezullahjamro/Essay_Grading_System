@@ -12,6 +12,41 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Set up authentication routes
   setupAuth(app);
 
+  // Firebase Google Authentication
+  app.post("/api/auth/google", async (req, res) => {
+    try {
+      const { displayName, email, uid, photoURL } = req.body;
+      
+      if (!email || !uid) {
+        return res.status(400).json({ error: "Missing required Firebase user data" });
+      }
+
+      // Check if user already exists by email
+      let user = await storage.getUserByEmail(email);
+      
+      if (!user) {
+        // Create new user from Firebase data
+        user = await storage.createUser({
+          username: displayName || email.split('@')[0],
+          email: email,
+          password: `firebase_${uid}`, // Firebase users don't need traditional passwords
+        });
+      }
+
+      // Log the user in via session
+      req.login(user, (err) => {
+        if (err) {
+          console.error("Session login error:", err);
+          return res.status(500).json({ error: "Failed to create session" });
+        }
+        res.status(200).json(user);
+      });
+    } catch (error) {
+      console.error("Firebase auth error:", error);
+      res.status(500).json({ error: "Authentication failed" });
+    }
+  });
+
   // Health check endpoint for monitoring and Docker
   app.get("/api/health", (req, res) => {
     res.status(200).json({
