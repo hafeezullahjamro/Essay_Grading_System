@@ -74,6 +74,8 @@ export interface IStorage {
   createGrading(grading: Omit<any, "id" | "date">): Promise<any>;
   getGradingById(id: number): Promise<any | undefined>;
   getUserGradings(userId: number): Promise<any[]>;
+  createContactMessage(message: { name: string; email: string; subject: string; message: string }): Promise<any>;
+  getAllContactMessages(): Promise<any[]>;
   
   sessionStore: any; // Express session store
 }
@@ -264,11 +266,13 @@ export class MemStorage implements IStorage {
   private users: Map<number, User>;
   private purchases: Map<number, Purchase>;
   private gradings: Map<number, any>;
+  private contactMessages: Map<number, any>;
   sessionStore: any; // Express session store
   currentId: {
     users: number;
     purchases: number;
     gradings: number;
+    contactMessages: number;
   };
 
   constructor() {
