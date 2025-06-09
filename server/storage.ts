@@ -320,17 +320,18 @@ export class MemStorage implements IStorage {
   // Seed initial users as specified in requirements
   private seedUsers() {
     const seedUsers = [
-      { id: 1, username: "free_user", email: "free_user@example.com", password: "password", credits: 1, subscriptionExpiresAt: null },
-      { id: 2, username: "pack5_user", email: "pack5_user@example.com", password: "password", credits: 6, subscriptionExpiresAt: null },
-      { id: 3, username: "pack10_user", email: "pack10_user@example.com", password: "password", credits: 12, subscriptionExpiresAt: null },
-      { id: 4, username: "subscriber", email: "subscriber@example.com", password: "password", credits: 0, subscriptionExpiresAt: new Date("2099-12-31T23:59:59Z") }
+      { id: 1, username: "admin", email: "admin@corestoneGrader.com", password: "admin123", credits: 100, subscriptionExpiresAt: null, isAdmin: 1 },
+      { id: 2, username: "free_user", email: "free_user@example.com", password: "password", credits: 1, subscriptionExpiresAt: null, isAdmin: 0 },
+      { id: 3, username: "pack5_user", email: "pack5_user@example.com", password: "password", credits: 6, subscriptionExpiresAt: null, isAdmin: 0 },
+      { id: 4, username: "pack10_user", email: "pack10_user@example.com", password: "password", credits: 12, subscriptionExpiresAt: null, isAdmin: 0 },
+      { id: 5, username: "subscriber", email: "subscriber@example.com", password: "password", credits: 0, subscriptionExpiresAt: new Date("2099-12-31T23:59:59Z"), isAdmin: 0 }
     ];
 
     seedUsers.forEach(user => {
       this.users.set(user.id, user as User);
     });
     
-    this.currentId.users = 5;
+    this.currentId.users = 6;
   }
 
   async getUser(id: number): Promise<User | undefined> {
