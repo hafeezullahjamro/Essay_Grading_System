@@ -319,12 +319,15 @@ export class MemStorage implements IStorage {
 
   // Seed initial users as specified in requirements
   private seedUsers() {
+    // All users use the same hashed password: "password"
+    const hashedPassword = "b2b5945c2b0ec6c40e7a7a931dcacdefc309625f6b0c5e4c3bf02dd3809cc5a8e45c024e8bb2c9b05d1d41f0020e8719563e0e828e218df269e3e5066ebe64c1.28d0d72ff7532eb1a63b6697b3faa02a";
+    
     const seedUsers = [
-      { id: 1, username: "admin", email: "admin@corestoneGrader.com", password: "admin123", credits: 100, subscriptionExpiresAt: null, isAdmin: 1 },
-      { id: 2, username: "free_user", email: "free_user@example.com", password: "password", credits: 1, subscriptionExpiresAt: null, isAdmin: 0 },
-      { id: 3, username: "pack5_user", email: "pack5_user@example.com", password: "password", credits: 6, subscriptionExpiresAt: null, isAdmin: 0 },
-      { id: 4, username: "pack10_user", email: "pack10_user@example.com", password: "password", credits: 12, subscriptionExpiresAt: null, isAdmin: 0 },
-      { id: 5, username: "subscriber", email: "subscriber@example.com", password: "password", credits: 0, subscriptionExpiresAt: new Date("2099-12-31T23:59:59Z"), isAdmin: 0 }
+      { id: 1, username: "admin", email: "admin@corestoneGrader.com", password: hashedPassword, credits: 100, subscriptionExpiresAt: null, isAdmin: 1 },
+      { id: 2, username: "free_user", email: "free_user@example.com", password: hashedPassword, credits: 1, subscriptionExpiresAt: null, isAdmin: 0 },
+      { id: 3, username: "pack5_user", email: "pack5_user@example.com", password: hashedPassword, credits: 6, subscriptionExpiresAt: null, isAdmin: 0 },
+      { id: 4, username: "pack10_user", email: "pack10_user@example.com", password: hashedPassword, credits: 12, subscriptionExpiresAt: null, isAdmin: 0 },
+      { id: 5, username: "subscriber", email: "subscriber@example.com", password: hashedPassword, credits: 0, subscriptionExpiresAt: new Date("2099-12-31T23:59:59Z"), isAdmin: 0 }
     ];
 
     seedUsers.forEach(user => {
