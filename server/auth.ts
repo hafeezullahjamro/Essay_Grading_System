@@ -49,8 +49,6 @@ export function setupAuth(app: Express) {
   passport.use(
     new LocalStrategy(async (username, password, done) => {
       try {
-        console.log("Authentication attempt for username:", username);
-        
         // Try to find user by username or email
         let user = await storage.getUserByUsername(username);
         
@@ -59,25 +57,12 @@ export function setupAuth(app: Express) {
           user = await storage.getUserByEmail(username);
         }
         
-        if (!user) {
-          console.log("User not found:", username);
+        if (!user || !(await comparePasswords(password, user.password))) {
           return done(null, false);
         }
         
-        console.log("User found:", user.username, "isAdmin:", user.isAdmin);
-        
-        const passwordMatch = await comparePasswords(password, user.password);
-        console.log("Password match:", passwordMatch);
-        
-        if (!passwordMatch) {
-          console.log("Password mismatch for user:", username);
-          return done(null, false);
-        }
-        
-        console.log("Authentication successful for:", user.username);
         return done(null, user);
       } catch (error) {
-        console.error("Authentication error:", error);
         return done(error);
       }
     }),
@@ -119,25 +104,18 @@ export function setupAuth(app: Express) {
   });
 
   app.post("/api/login", (req, res, next) => {
-    console.log("Login attempt received:", req.body.username);
-    
     passport.authenticate("local", (err: any, user: any, info: any) => {
       if (err) {
-        console.error("Authentication error:", err);
         return next(err);
       }
       if (!user) {
-        console.log("Authentication failed for:", req.body.username);
         return res.status(401).json({ message: "Invalid username or password" });
       }
       
-      console.log("User authenticated, logging in:", user.username);
       req.login(user, (err: any) => {
         if (err) {
-          console.error("Login error:", err);
           return next(err);
         }
-        console.log("User successfully logged in:", user.username);
         return res.json(user);
       });
     })(req, res, next);
