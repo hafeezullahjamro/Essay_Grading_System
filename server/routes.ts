@@ -11,6 +11,16 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Set up authentication routes
   setupAuth(app);
 
+  // Health check endpoint for monitoring and Docker
+  app.get("/api/health", (req, res) => {
+    res.status(200).json({
+      status: "healthy",
+      timestamp: new Date().toISOString(),
+      uptime: process.uptime(),
+      version: "1.0.0"
+    });
+  });
+
   // API routes
   // Get user credits
   app.get("/api/credits", async (req, res) => {
